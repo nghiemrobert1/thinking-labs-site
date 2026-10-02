@@ -1,35 +1,39 @@
 import Link from "next/link";
+import { HeroVisual } from "@/components/HeroVisual";
 import { Notice } from "@/components/Notice";
 
 export default function HomePage() {
   return (
     <div className="space-y-12">
-      <section className="space-y-6">
-        <p className="text-sm font-medium uppercase tracking-wide text-accent-dark">
-          Thinking Labs, Inc.
-        </p>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-          Educational twin dashboards for cardio-kidney-metabolic care
-        </h1>
-        <p className="max-w-2xl text-lg text-muted">
-          We build clear patient and clinician views that help people explore
-          CKD-related trajectories together—with the doctor deciding what
-          happens next. Learning tools first. Not a device. Not a diagnosis.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/product"
-            className="inline-flex items-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white hover:bg-accent-dark"
-          >
-            See the product
-          </Link>
-          <Link
-            href="/how-it-works"
-            className="inline-flex items-center rounded-lg border border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-slate-50"
-          >
-            How it works
-          </Link>
+      <section className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+        <div className="space-y-6">
+          <p className="inline-flex items-center rounded-full border border-teal/30 bg-accent-soft/70 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-dark">
+            Thinking Labs, Inc.
+          </p>
+          <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            Educational twin dashboards for cardio-kidney-metabolic care
+          </h1>
+          <p className="max-w-xl text-lg text-muted">
+            We build clear patient and clinician views that help people explore
+            CKD-related trajectories together—with the doctor deciding what
+            happens next. Learning tools first. Not a device. Not a diagnosis.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/product"
+              className="inline-flex items-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-teal/25 hover:bg-accent-dark"
+            >
+              See the product
+            </Link>
+            <Link
+              href="/how-it-works"
+              className="inline-flex items-center rounded-lg border border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground hover:border-violet/40 hover:bg-violet-soft/40"
+            >
+              How it works
+            </Link>
+          </div>
         </div>
+        <HeroVisual />
       </section>
 
       <Notice>
@@ -55,19 +59,26 @@ export default function HomePage() {
         ].map((card) => (
           <article
             key={card.title}
-            className="rounded-xl border border-border bg-card p-5 shadow-sm"
+            className="card-glow overflow-hidden rounded-xl border border-border bg-card"
           >
-            <h2 className="text-base font-semibold text-foreground">
-              {card.title}
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              {card.body}
-            </p>
+            <div className="card-accent-bar h-1 w-full" aria-hidden />
+            <div className="p-5">
+              <h2 className="text-base font-semibold text-foreground">
+                {card.title}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {card.body}
+              </p>
+            </div>
           </article>
         ))}
       </section>
 
-      <section className="rounded-xl border border-border bg-card p-6 sm:p-8">
+      <section className="card-glow relative overflow-hidden rounded-xl border border-border bg-card p-6 sm:p-8">
+        <div
+          className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-violet/10 blur-2xl"
+          aria-hidden
+        />
         <h2 className="text-xl font-semibold text-foreground">Our mission</h2>
         <p className="mt-3 max-w-3xl text-muted leading-relaxed">
           Chronic kidney disease and cardio-kidney-metabolic risk are hard to

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { Logo } from "@/components/Logo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -18,14 +19,15 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-card/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-foreground"
+          className="rounded-md focus-visible:outline-offset-4"
           onClick={() => setOpen(false)}
+          aria-label="Thinking Labs home"
         >
-          Thinking Labs
+          <Logo size="md" />
         </Link>
 
         <button
@@ -42,7 +44,7 @@ export function Header() {
           id="primary-nav"
           className={`${
             open ? "flex" : "hidden"
-          } absolute left-0 right-0 top-full flex-col gap-1 border-b border-border bg-card px-4 py-3 shadow-sm md:static md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
+          } absolute left-0 right-0 top-full flex-col gap-1 border-b border-border bg-card px-4 py-3 shadow-sm md:static md:flex md:flex-row md:items-center md:gap-0.5 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
           aria-label="Primary"
         >
           {links.map((link) => {
@@ -58,7 +60,7 @@ export function Header() {
                 className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                   active
                     ? "bg-accent-soft text-accent-dark"
-                    : "text-muted hover:bg-slate-100 hover:text-foreground"
+                    : "text-muted hover:bg-violet-soft/60 hover:text-foreground"
                 }`}
                 aria-current={active ? "page" : undefined}
               >

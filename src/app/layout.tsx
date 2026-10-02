@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   description:
     "Thinking Labs, Inc. builds educational cardio-kidney-metabolic twin dashboards for patients and clinicians. Not a medical device. Doctor decides.",
-  metadataBase: new URL("https://thinking-labs.vercel.app"),
+  metadataBase: new URL("https://thinking-labs-site.vercel.app"),
 };
 
 export default function RootLayout({
