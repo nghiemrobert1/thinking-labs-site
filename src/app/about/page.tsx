@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="space-y-10">
+    <div className="tl-page-enter space-y-10">
       <PageHero
         title="About Thinking Labs"
         lead="Thinking Labs, Inc. manufactures educational cardio-kidney-metabolic twin dashboards. We keep claims modest and clinicians in charge."

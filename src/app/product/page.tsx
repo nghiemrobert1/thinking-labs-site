@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Notice } from "@/components/Notice";
 import { PageHero } from "@/components/PageHero";
+import { ProductVisual } from "@/components/ProductVisual";
 import { TechBand } from "@/components/TechBand";
 
 export const metadata: Metadata = {
@@ -12,13 +13,15 @@ export const metadata: Metadata = {
 
 export default function ProductPage() {
   return (
-    <div className="space-y-10">
+    <div className="tl-page-enter space-y-10">
       <PageHero
         title="Product: CKD Twin"
         lead="Dual dashboards—patient and clinician—built as an educational trajectory demonstrator. Thinking Labs is the manufacturer."
       />
 
       <TechBand />
+
+      <ProductVisual />
 
       <Notice>
         <strong>Not a medical device.</strong> Not cleared or approved by the

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="space-y-10">
+    <div className="tl-page-enter space-y-10">
       <PageHero
         title="Contact"
         lead="Reach Thinking Labs about the educational twin dashboards, clinic conversations, or general questions."

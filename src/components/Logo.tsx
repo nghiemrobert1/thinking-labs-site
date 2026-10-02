@@ -1,16 +1,19 @@
 type LogoProps = {
   className?: string;
   showWordmark?: boolean;
-  size?: "sm" | "md";
+  size?: "sm" | "md" | "lg";
 };
 
+/** Twin-node mark: two linked hubs (patient/clinician) in a navy tile. */
 export function Logo({
   className = "",
   showWordmark = true,
   size = "md",
 }: LogoProps) {
-  const mark = size === "sm" ? "h-7 w-7" : "h-8 w-8";
-  const text = size === "sm" ? "text-base" : "text-lg";
+  const mark =
+    size === "sm" ? "h-7 w-7" : size === "lg" ? "h-10 w-10" : "h-8 w-8";
+  const text =
+    size === "sm" ? "text-base" : size === "lg" ? "text-xl" : "text-lg";
 
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
@@ -23,26 +26,48 @@ export function Logo({
         role={showWordmark ? "presentation" : "img"}
       >
         {!showWordmark ? <title>Thinking Labs</title> : null}
-        <rect width="48" height="48" rx="12" fill="#0B1F3A" />
+        <defs>
+          <linearGradient id="tl-mark-ring" x1="8" y1="8" x2="40" y2="40">
+            <stop stopColor="#2DD4BF" />
+            <stop offset="1" stopColor="#7C6CF0" />
+          </linearGradient>
+        </defs>
+        <rect width="48" height="48" rx="13" fill="#0B1F3A" />
+        <rect
+          x="1.25"
+          y="1.25"
+          width="45.5"
+          height="45.5"
+          rx="11.75"
+          stroke="url(#tl-mark-ring)"
+          strokeWidth="1.5"
+          opacity="0.55"
+        />
+        {/* outer orbit */}
         <circle
+          className="tl-mark-orbit"
           cx="24"
           cy="24"
-          r="11"
+          r="14"
           stroke="#2DD4BF"
-          strokeWidth="2"
-          opacity="0.9"
+          strokeWidth="1.25"
+          strokeDasharray="3 5"
+          opacity="0.55"
         />
-        <circle cx="24" cy="24" r="4" fill="#7C6CF0" />
+        {/* twin hubs */}
+        <circle cx="17" cy="24" r="5" fill="#14B8A6" opacity="0.95" />
+        <circle cx="31" cy="24" r="5" fill="#7C6CF0" opacity="0.95" />
         <path
-          d="M24 8v5M24 35v5M8 24h5M35 24h5M13.5 13.5l3.5 3.5M31 31l3.5 3.5M13.5 34.5l3.5-3.5M31 17l3.5-3.5"
-          stroke="#5EEAD4"
-          strokeWidth="1.5"
+          d="M22 24h4"
+          stroke="#E2E8F0"
+          strokeWidth="2"
           strokeLinecap="round"
-          opacity="0.75"
         />
-        <circle cx="24" cy="13" r="1.5" fill="#5EEAD4" />
-        <circle cx="35" cy="24" r="1.5" fill="#A78BFA" />
-        <circle cx="24" cy="35" r="1.5" fill="#5EEAD4" />
+        <circle cx="17" cy="24" r="1.8" fill="#ECFEFF" />
+        <circle cx="31" cy="24" r="1.8" fill="#F5F3FF" />
+        {/* small satellites */}
+        <circle cx="24" cy="12" r="1.6" fill="#5EEAD4" />
+        <circle cx="24" cy="36" r="1.6" fill="#A78BFA" />
       </svg>
       {showWordmark ? (
         <span

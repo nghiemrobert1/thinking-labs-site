@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function SafetyPage() {
   return (
-    <div className="space-y-10">
+    <div className="tl-page-enter space-y-10">
       <PageHero
         title="Safety & compliance"
         lead="Plain-language framing for where we are today—and what comes later when clinics enroll."
