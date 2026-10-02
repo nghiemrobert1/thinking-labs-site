@@ -23,7 +23,7 @@ export function Header() {
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
-          className="rounded-md focus-visible:outline-offset-4"
+          className="group rounded-md focus-visible:outline-offset-4"
           onClick={() => setOpen(false)}
           aria-label="Thinking Labs home"
         >

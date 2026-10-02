@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Notice } from "@/components/Notice";
 import { PageHero } from "@/components/PageHero";
+import { TechBand } from "@/components/TechBand";
 
 export const metadata: Metadata = {
   title: "Product",
@@ -17,6 +18,8 @@ export default function ProductPage() {
         lead="Dual dashboards—patient and clinician—built as an educational trajectory demonstrator. Thinking Labs is the manufacturer."
       />
 
+      <TechBand />
+
       <Notice>
         <strong>Not a medical device.</strong> Not cleared or approved by the
         FDA for diagnosis, treatment, or independent clinical decision-making.
@@ -24,26 +27,32 @@ export default function ProductPage() {
       </Notice>
 
       <section className="grid gap-6 sm:grid-cols-2">
-        <article className="rounded-xl border border-border bg-card p-6">
-          <h2 className="text-lg font-semibold text-foreground">
-            Patient dashboard
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted">
-            A straightforward place to enter information and explore how
-            lifestyle and lab context can relate to a kidney-related
-            trajectory over time—presented as learning material, not a
-            prescription.
-          </p>
+        <article className="card-glow overflow-hidden rounded-xl border border-border bg-card">
+          <div className="h-1 w-full bg-gradient-to-r from-teal to-cyan" aria-hidden />
+          <div className="p-6">
+            <h2 className="text-lg font-semibold text-foreground">
+              Patient dashboard
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              A straightforward place to enter information and explore how
+              lifestyle and lab context can relate to a kidney-related
+              trajectory over time—presented as learning material, not a
+              prescription.
+            </p>
+          </div>
         </article>
-        <article className="rounded-xl border border-border bg-card p-6">
-          <h2 className="text-lg font-semibold text-foreground">
-            Clinician dashboard
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted">
-            A companion view for the care team. Context and structure to
-            support conversation—not automated orders, alerts that replace
-            judgment, or outcome guarantees.
-          </p>
+        <article className="card-glow overflow-hidden rounded-xl border border-border bg-card">
+          <div className="h-1 w-full bg-gradient-to-r from-violet to-violet/50" aria-hidden />
+          <div className="p-6">
+            <h2 className="text-lg font-semibold text-foreground">
+              Clinician dashboard
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              A companion view for the care team. Context and structure to
+              support conversation—not automated orders, alerts that replace
+              judgment, or outcome guarantees.
+            </p>
+          </div>
         </article>
       </section>
 
@@ -61,13 +70,11 @@ export default function ProductPage() {
             <strong className="text-foreground">Not</strong> a treatment or cure
             product
           </li>
-          <li>
-            Doctor (or licensed clinician) decides all care
-          </li>
+          <li>Doctor (or licensed clinician) decides all care</li>
         </ul>
       </section>
 
-      <section className="rounded-xl border border-dashed border-border bg-slate-50 p-6">
+      <section className="rounded-xl border border-dashed border-teal/30 bg-gradient-to-br from-accent-soft/40 to-violet-soft/30 p-6">
         <h2 className="text-base font-semibold text-foreground">
           Optional live demo
         </h2>

@@ -5,35 +5,38 @@ import { Notice } from "@/components/Notice";
 export default function HomePage() {
   return (
     <div className="space-y-12">
-      <section className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+      <section className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <div className="space-y-6">
-          <p className="inline-flex items-center rounded-full border border-teal/30 bg-accent-soft/70 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-dark">
+          <p className="tl-animate-fade-up inline-flex items-center gap-2 rounded-full border border-teal/30 bg-accent-soft/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-dark">
+            <span className="h-1.5 w-1.5 rounded-full bg-teal" aria-hidden />
             Thinking Labs, Inc.
           </p>
-          <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+          <h1 className="tl-animate-fade-up-delay max-w-xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
             Educational twin dashboards for cardio-kidney-metabolic care
           </h1>
-          <p className="max-w-xl text-lg text-muted">
+          <p className="tl-animate-fade-up-delay-2 max-w-xl text-lg text-muted">
             We build clear patient and clinician views that help people explore
             CKD-related trajectories together—with the doctor deciding what
             happens next. Learning tools first. Not a device. Not a diagnosis.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="tl-animate-fade-up-delay-2 flex flex-wrap gap-3">
             <Link
               href="/product"
-              className="inline-flex items-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-teal/25 hover:bg-accent-dark"
+              className="inline-flex items-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal/20 transition hover:bg-accent-dark hover:shadow-lg hover:shadow-teal/25"
             >
               See the product
             </Link>
             <Link
               href="/how-it-works"
-              className="inline-flex items-center rounded-lg border border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground hover:border-violet/40 hover:bg-violet-soft/40"
+              className="inline-flex items-center rounded-lg border border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground transition hover:border-violet/40 hover:bg-violet-soft/50"
             >
               How it works
             </Link>
           </div>
         </div>
-        <HeroVisual />
+        <div className="tl-animate-fade-up-delay">
+          <HeroVisual />
+        </div>
       </section>
 
       <Notice>
@@ -47,21 +50,27 @@ export default function HomePage() {
           {
             title: "Patient view",
             body: "Simple entry and feedback so people can see how habits and labs might relate to a trajectory—always under clinician guidance.",
+            tint: "from-teal/80 to-cyan/50",
           },
           {
             title: "Clinician view",
             body: "A companion dashboard for the care team. Structured context, not automated orders. The clinician decides.",
+            tint: "from-violet/80 to-violet/40",
           },
           {
             title: "Built for learning",
             body: "POC and educational framing today. Validated AI components and regulatory pathways come later, on purpose.",
+            tint: "from-navy-mid/80 to-teal/40",
           },
         ].map((card) => (
           <article
             key={card.title}
-            className="card-glow overflow-hidden rounded-xl border border-border bg-card"
+            className="card-glow group overflow-hidden rounded-xl border border-border bg-card transition hover:-translate-y-0.5 hover:border-teal/30"
           >
-            <div className="card-accent-bar h-1 w-full" aria-hidden />
+            <div
+              className={`h-1 w-full bg-gradient-to-r ${card.tint}`}
+              aria-hidden
+            />
             <div className="p-5">
               <h2 className="text-base font-semibold text-foreground">
                 {card.title}
@@ -76,24 +85,31 @@ export default function HomePage() {
 
       <section className="card-glow relative overflow-hidden rounded-xl border border-border bg-card p-6 sm:p-8">
         <div
-          className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-violet/10 blur-2xl"
+          className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-violet/15 blur-3xl"
           aria-hidden
         />
-        <h2 className="text-xl font-semibold text-foreground">Our mission</h2>
-        <p className="mt-3 max-w-3xl text-muted leading-relaxed">
-          Chronic kidney disease and cardio-kidney-metabolic risk are hard to
-          talk about with numbers alone. Thinking Labs manufactures educational
-          twin dashboards that make those conversations clearer—without
-          promising outcomes, cures, or autonomous care.
-        </p>
-        <p className="mt-4">
-          <Link
-            href="/about"
-            className="text-sm font-semibold text-accent-dark hover:underline"
-          >
-            About Thinking Labs →
-          </Link>
-        </p>
+        <div
+          className="pointer-events-none absolute -bottom-10 -left-6 h-32 w-32 rounded-full bg-teal/10 blur-3xl"
+          aria-hidden
+        />
+        <div className="relative">
+          <div className="card-accent-bar mb-4 h-1 w-14 rounded-full" aria-hidden />
+          <h2 className="text-xl font-semibold text-foreground">Our mission</h2>
+          <p className="mt-3 max-w-3xl text-muted leading-relaxed">
+            Chronic kidney disease and cardio-kidney-metabolic risk are hard to
+            talk about with numbers alone. Thinking Labs manufactures educational
+            twin dashboards that make those conversations clearer—without
+            promising outcomes, cures, or autonomous care.
+          </p>
+          <p className="mt-4">
+            <Link
+              href="/about"
+              className="text-sm font-semibold text-accent-dark hover:underline"
+            >
+              About Thinking Labs →
+            </Link>
+          </p>
+        </div>
       </section>
     </div>
   );

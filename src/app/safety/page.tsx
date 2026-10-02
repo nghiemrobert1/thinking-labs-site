@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Notice } from "@/components/Notice";
 import { PageHero } from "@/components/PageHero";
+import { TechBand } from "@/components/TechBand";
 
 export const metadata: Metadata = {
   title: "Safety & compliance",
@@ -17,7 +18,9 @@ export default function SafetyPage() {
         lead="Plain-language framing for where we are today—and what comes later when clinics enroll."
       />
 
-      <Notice>
+      <TechBand />
+
+<Notice>
         Current software is intended for <strong>education and demonstration</strong>.
         It is not FDA-cleared or approved as a medical device.
       </Notice>

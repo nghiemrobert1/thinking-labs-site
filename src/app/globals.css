@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f7fb;
+  --background: #f1f5fb;
   --foreground: #0b1f3a;
   --muted: #5b6b7c;
-  --border: #d7e0ea;
+  --border: #d4dee9;
   --card: #ffffff;
   --accent: #0f766e;
   --accent-dark: #115e59;
@@ -42,8 +42,9 @@
 
 body {
   background:
-    radial-gradient(1200px 500px at 10% -10%, rgba(124, 108, 240, 0.08), transparent 55%),
-    radial-gradient(900px 420px at 90% 0%, rgba(20, 184, 166, 0.09), transparent 50%),
+    radial-gradient(1200px 560px at 8% -8%, rgba(124, 108, 240, 0.1), transparent 55%),
+    radial-gradient(1000px 480px at 92% 0%, rgba(20, 184, 166, 0.11), transparent 52%),
+    radial-gradient(700px 400px at 50% 100%, rgba(34, 211, 238, 0.06), transparent 60%),
     var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
@@ -58,9 +59,106 @@ button:focus-visible {
 .card-glow {
   box-shadow:
     0 1px 2px rgba(11, 31, 58, 0.04),
-    0 8px 24px rgba(11, 31, 58, 0.06);
+    0 10px 28px rgba(11, 31, 58, 0.07);
 }
 
 .card-accent-bar {
-  background: linear-gradient(90deg, #14b8a6, #7c6cf0);
+  background: linear-gradient(90deg, #14b8a6, #7c6cf0 55%, #22d3ee);
+}
+
+/* --- Motion (respect reduced motion) --- */
+@keyframes tl-orb-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(12px, -10px) scale(1.06); }
+}
+
+@keyframes tl-orb-drift-alt {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-14px, 8px) scale(1.05); }
+}
+
+@keyframes tl-pulse-node {
+  0%, 100% { opacity: 0.55; r: 3.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes tl-draw-line {
+  0% { stroke-dashoffset: 240; opacity: 0.2; }
+  40% { opacity: 0.7; }
+  100% { stroke-dashoffset: 0; opacity: 0.55; }
+}
+
+@keyframes tl-bar-rise {
+  from { transform: scaleY(0.35); opacity: 0.4; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes tl-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes tl-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tl-grid-pan {
+  from { transform: translateY(0); }
+  to { transform: translateY(28px); }
+}
+
+@keyframes tl-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  20% { opacity: 0.35; }
+  80% { opacity: 0.35; }
+  100% { transform: translateY(220%); opacity: 0; }
+}
+
+.tl-animate-orb {
+  animation: tl-orb-drift 14s ease-in-out infinite;
+}
+.tl-animate-orb-alt {
+  animation: tl-orb-drift-alt 18s ease-in-out infinite;
+}
+.tl-animate-fade-up {
+  animation: tl-fade-up 0.7s ease-out both;
+}
+.tl-animate-fade-up-delay {
+  animation: tl-fade-up 0.7s ease-out 0.12s both;
+}
+.tl-animate-fade-up-delay-2 {
+  animation: tl-fade-up 0.7s ease-out 0.24s both;
+}
+.tl-bar {
+  transform-origin: bottom;
+  animation: tl-bar-rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.tl-path-draw {
+  stroke-dasharray: 240;
+  animation: tl-draw-line 2.8s ease-out both;
+}
+.tl-grid-pan {
+  animation: tl-grid-pan 24s linear infinite;
+}
+.tl-scan-line {
+  animation: tl-scan 6s ease-in-out infinite;
+}
+.tl-node-pulse {
+  animation: tl-pulse-node 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-animate-orb,
+  .tl-animate-orb-alt,
+  .tl-animate-fade-up,
+  .tl-animate-fade-up-delay,
+  .tl-animate-fade-up-delay-2,
+  .tl-bar,
+  .tl-path-draw,
+  .tl-grid-pan,
+  .tl-scan-line,
+  .tl-node-pulse {
+    animation: none !important;
+  }
 }

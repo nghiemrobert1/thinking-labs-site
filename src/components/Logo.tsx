@@ -15,11 +15,11 @@ export function Logo({
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <svg
-        className={`${mark} shrink-0`}
+        className={`${mark} shrink-0 transition-transform duration-300 group-hover:scale-105`}
         viewBox="0 0 48 48"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        aria-hidden={!showWordmark}
+        aria-hidden={showWordmark}
         role={showWordmark ? "presentation" : "img"}
       >
         {!showWordmark ? <title>Thinking Labs</title> : null}

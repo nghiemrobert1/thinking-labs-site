@@ -6,18 +6,22 @@ export function PageHero({
   lead: string;
 }) {
   return (
-    <div className="relative mb-10 overflow-hidden rounded-2xl border border-border/70 bg-card/80 p-6 sm:p-8 card-glow">
+    <div className="relative mb-6 overflow-hidden rounded-2xl border border-border/70 bg-card/90 p-6 sm:p-8 card-glow">
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        className="pointer-events-none absolute inset-0 opacity-[0.4]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(20,184,166,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(124,108,240,0.07) 1px, transparent 1px)",
+            "linear-gradient(rgba(20,184,166,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(124,108,240,0.08) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-teal/15 blur-3xl"
+        className="tl-animate-orb pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full bg-teal/20 blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="tl-animate-orb-alt pointer-events-none absolute -bottom-12 -left-8 h-36 w-36 rounded-full bg-violet/15 blur-3xl"
         aria-hidden
       />
       <div className="relative">

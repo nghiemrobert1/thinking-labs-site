@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { TechBand } from "@/components/TechBand";
 
 export const metadata: Metadata = {
   title: "How it works",
@@ -34,7 +35,9 @@ export default function HowItWorksPage() {
         lead="A simple path from patient entry to clinician review—with any advanced AI validation coming later, on purpose."
       />
 
-      <ol className="space-y-4">
+      <TechBand />
+
+<ol className="space-y-4">
         {steps.map((step) => (
           <li
             key={step.n}
