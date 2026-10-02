@@ -18,7 +18,7 @@ export function Logo({
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <svg
-        className={`${mark} shrink-0 transition-transform duration-300 group-hover:scale-105`}
+        className={`${mark} shrink-0 drop-shadow-sm transition-transform duration-300 group-hover:scale-105`}
         viewBox="0 0 48 48"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,6 @@ export function Logo({
           strokeWidth="1.5"
           opacity="0.55"
         />
-        {/* outer orbit */}
         <circle
           className="tl-mark-orbit"
           cx="24"
@@ -54,7 +53,6 @@ export function Logo({
           strokeDasharray="3 5"
           opacity="0.55"
         />
-        {/* twin hubs */}
         <circle cx="17" cy="24" r="5" fill="#14B8A6" opacity="0.95" />
         <circle cx="31" cy="24" r="5" fill="#7C6CF0" opacity="0.95" />
         <path
@@ -65,15 +63,19 @@ export function Logo({
         />
         <circle cx="17" cy="24" r="1.8" fill="#ECFEFF" />
         <circle cx="31" cy="24" r="1.8" fill="#F5F3FF" />
-        {/* small satellites */}
         <circle cx="24" cy="12" r="1.6" fill="#5EEAD4" />
         <circle cx="24" cy="36" r="1.6" fill="#A78BFA" />
       </svg>
       {showWordmark ? (
-        <span
-          className={`${text} font-semibold tracking-tight text-foreground`}
-        >
-          Thinking Labs
+        <span className="flex flex-col leading-none">
+          <span
+            className={`${text} font-semibold tracking-tight text-foreground`}
+          >
+            Thinking Labs
+          </span>
+          <span className="mt-0.5 hidden text-[10px] font-semibold uppercase tracking-[0.14em] text-muted/80 sm:inline">
+            Inc.
+          </span>
         </span>
       ) : null}
     </span>

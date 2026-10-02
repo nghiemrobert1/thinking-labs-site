@@ -163,3 +163,54 @@ button:focus-visible {
     animation: none !important;
   }
 }
+
+/* Pass-3 micro-interactions */
+.tl-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.tl-lift:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 4px 8px rgba(11, 31, 58, 0.06),
+    0 16px 32px rgba(11, 31, 58, 0.08);
+}
+.tl-press {
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+.tl-press:active {
+  transform: scale(0.97);
+}
+.tl-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.35rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #14b8a6, #7c6cf0);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+  opacity: 0.85;
+}
+.tl-nav-link:hover::after {
+  transform: scaleX(1);
+}
+.tl-nav-link[aria-current="page"]::after {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-lift,
+  .tl-press,
+  .tl-nav-link::after {
+    transition: none !important;
+  }
+  .tl-lift:hover {
+    transform: none;
+  }
+  .tl-press:active {
+    transform: none;
+  }
+}

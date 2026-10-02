@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeroVisual } from "@/components/HeroVisual";
+import { DarkBand } from "@/components/DarkBand";
 import { Notice } from "@/components/Notice";
 
 export default function HomePage() {
@@ -84,34 +85,22 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="card-glow relative overflow-hidden rounded-xl border border-border bg-card p-6 sm:p-8">
-        <div
-          className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-violet/15 blur-3xl"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute -bottom-10 -left-6 h-32 w-32 rounded-full bg-teal/10 blur-3xl"
-          aria-hidden
-        />
-        <div className="relative">
-          <div className="card-accent-bar mb-4 h-1 w-14 rounded-full" aria-hidden />
-          <h2 className="text-xl font-semibold text-foreground">Our mission</h2>
-          <p className="mt-3 max-w-3xl text-muted leading-relaxed">
-            Chronic kidney disease and cardio-kidney-metabolic risk are hard to
-            talk about with numbers alone. Thinking Labs manufactures educational
-            twin dashboards that make those conversations clearer—without
-            promising outcomes, cures, or autonomous care.
-          </p>
-          <p className="mt-4">
-            <Link
-              href="/about"
-              className="text-sm font-semibold text-accent-dark hover:underline"
-            >
-              About Thinking Labs →
-            </Link>
-          </p>
-        </div>
-      </section>
+      <DarkBand eyebrow="Mission" title="Clearer conversations, clinicians in charge">
+        <p>
+          Chronic kidney disease and cardio-kidney-metabolic risk are hard to
+          talk about with numbers alone. Thinking Labs manufactures educational
+          twin dashboards that make those conversations clearer—without
+          promising outcomes, cures, or autonomous care.
+        </p>
+        <p className="mt-4">
+          <Link
+            href="/about"
+            className="text-sm font-semibold text-teal-200 hover:text-white hover:underline"
+          >
+            About Thinking Labs →
+          </Link>
+        </p>
+      </DarkBand>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DarkBand } from "@/components/DarkBand";
+import { InfoCard } from "@/components/InfoCard";
 import { Notice } from "@/components/Notice";
 import { PageHero } from "@/components/PageHero";
 import { TechBand } from "@/components/TechBand";
@@ -9,6 +11,14 @@ export const metadata: Metadata = {
   description:
     "Educational intent, FDA/TEMPO path in plain words, and HIPAA/BAA when clinics enroll — Thinking Labs.",
 };
+
+const checklist = [
+  "Educational / demonstrator framing",
+  "Not a medical device (current)",
+  "Not FDA-cleared (current)",
+  "Doctor decides",
+  "HIPAA/BAA when clinics enroll for PHI workflows",
+];
 
 export default function SafetyPage() {
   return (
@@ -20,28 +30,20 @@ export default function SafetyPage() {
 
       <TechBand />
 
-<Notice>
-        Current software is intended for <strong>education and demonstration</strong>.
-        It is not FDA-cleared or approved as a medical device.
+      <Notice>
+        Current software is intended for{" "}
+        <strong>education and demonstration</strong>. It is not FDA-cleared or
+        approved as a medical device.
       </Notice>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold text-foreground">
-          Educational intent
-        </h2>
-        <p className="text-muted leading-relaxed">
+      <div className="grid gap-5 sm:grid-cols-3">
+        <InfoCard title="Educational intent" accent="teal">
           CKD Twin and related Thinking Labs materials help patients and
           clinicians explore cardio-kidney-metabolic concepts together. They
           are not intended to diagnose, treat, cure, or prevent disease on their
           own. Licensed clinicians retain full responsibility for care.
-        </p>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold text-foreground">
-          FDA / TEMPO path (plain words)
-        </h2>
-        <p className="text-muted leading-relaxed">
+        </InfoCard>
+        <InfoCard title="FDA / TEMPO path" accent="violet">
           We are <strong className="text-foreground">not claiming clearance
           today</strong>. Longer term, if product features move beyond
           educational demonstration, Thinking Labs expects to pursue an
@@ -50,34 +52,29 @@ export default function SafetyPage() {
           followed by the clearance or authorization route that fits the final
           intended use. That work is future-facing. Nothing on this site
           implies present FDA clearance.
-        </p>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold text-foreground">
-          HIPAA & BAAs
-        </h2>
-        <p className="text-muted leading-relaxed">
+        </InfoCard>
+        <InfoCard title="HIPAA & BAAs" accent="navy">
           When clinics or health systems enroll for workflows that involve
           protected health information, Thinking Labs will put Business
           Associate Agreements (BAAs) and appropriate safeguards in place
           before those deployments. Public demos and marketing pages are not
           clinic enrollment.
-        </p>
-      </section>
+        </InfoCard>
+      </div>
 
-      <section className="rounded-xl border border-border bg-card p-6">
-        <h2 className="text-base font-semibold text-foreground">
-          Short checklist
-        </h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-muted">
-          <li>Educational / demonstrator framing</li>
-          <li>Not a medical device (current)</li>
-          <li>Not FDA-cleared (current)</li>
-          <li>Doctor decides</li>
-          <li>HIPAA/BAA when clinics enroll for PHI workflows</li>
+      <DarkBand eyebrow="At a glance" title="Safety checklist">
+        <ul className="mt-1 grid gap-2 sm:grid-cols-2">
+          {checklist.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200"
+            >
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" aria-hidden />
+              {item}
+            </li>
+          ))}
         </ul>
-      </section>
+      </DarkBand>
 
       <p>
         <Link
