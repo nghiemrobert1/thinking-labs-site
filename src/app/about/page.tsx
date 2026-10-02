@@ -5,7 +5,7 @@ import { PageHero } from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Thinking Labs, Inc. — manufacturer of educational CKD twin dashboards. Clinical advisor note.",
+    "About Thinking Labs, Inc. — manufacturer of educational CKD twin dashboards.",
 };
 
 export default function AboutPage() {
@@ -29,17 +29,12 @@ export default function AboutPage() {
 
       <section className="rounded-xl border border-border bg-card p-6">
         <h2 className="text-lg font-semibold text-foreground">
-          Clinical advisor
+          Clinical advisors
         </h2>
         <p className="mt-3 text-muted leading-relaxed">
-          <strong className="text-foreground">Elizabeth Ng, MD</strong>, an
-          infectious disease specialist, serves as a{" "}
-          <strong className="text-foreground">clinical advisor</strong> to
-          Thinking Labs. She advises on clinical clarity and safety framing.
-        </p>
-        <p className="mt-3 text-sm text-muted leading-relaxed">
-          Advisor status does <em>not</em> mean Dr. Ng is employed as a
-          manufacturer clinician, nor that Thinking Labs practices medicine.
+          Thinking Labs works with clinical advisors on clarity and safety
+          framing. Advisor relationships do <em>not</em> mean Thinking Labs
+          employs clinicians as manufacturer staff or practices medicine.
           Clinical care remains with each patient’s own licensed providers.
         </p>
       </section>

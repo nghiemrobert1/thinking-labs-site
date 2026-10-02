@@ -10,7 +10,7 @@ This is **not** the CKD Twin application. The Twin demo lives separately (e.g. `
 - `/product` — Twin dual dashboards (educational framing)
 - `/how-it-works` — Patient → clinician → later validated AI
 - `/safety` — Educational intent, FDA/TEMPO plain language, HIPAA/BAA
-- `/about` — Company + clinical advisor note
+- `/about` — Company
 - `/contact` — mailto placeholder + non-functional form
 
 ## Stack
