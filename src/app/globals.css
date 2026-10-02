@@ -256,3 +256,88 @@ html {
   color: #ffffff;
   font-weight: 600;
 }
+
+/* Pass-5: a11y skip, focus, load-once logo, drawer, print */
+.tl-skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  border-radius: 0.5rem;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.tl-skip-link:focus {
+  top: 1rem;
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabIndex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0.4rem;
+}
+
+@keyframes tl-logo-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.88) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+.tl-logo-enter {
+  animation: tl-logo-enter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes tl-drawer-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.tl-drawer-in {
+  animation: tl-drawer-in 0.22s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-logo-enter,
+  .tl-drawer-in {
+    animation: none !important;
+  }
+}
+
+@media print {
+  header,
+  footer,
+  .tl-skip-link,
+  .tl-scan-line,
+  .tl-animate-orb,
+  .tl-animate-orb-alt {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #444;
+  }
+  a[href^="#"]::after,
+  a[href^="mailto:"]::after {
+    content: none;
+  }
+}

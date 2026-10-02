@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DarkBand } from "@/components/DarkBand";
 import { FlowVisual } from "@/components/FlowVisual";
 import { PageHero } from "@/components/PageHero";
 import { TechBand } from "@/components/TechBand";
@@ -41,54 +42,65 @@ export default function HowItWorksPage() {
 
       <TechBand />
 
-      <FlowVisual />
+      <section>
+        <p className="tl-eyebrow mb-3">Path overview</p>
+        <FlowVisual />
+      </section>
 
-      <ol className="space-y-4">
-        {steps.map((step) => (
-          <li
-            key={step.n}
-            className="card-glow flex gap-4 overflow-hidden rounded-xl border border-border bg-card"
-          >
-            <div className={`w-1.5 shrink-0 bg-gradient-to-b ${step.tint}`} aria-hidden />
-            <div className="flex flex-1 gap-4 p-5 sm:p-6">
-              <span
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-soft text-sm font-bold text-accent-dark"
+      <section>
+        <p className="tl-eyebrow mb-3">Steps</p>
+        <ol className="space-y-4">
+          {steps.map((step) => (
+            <li
+              key={step.n}
+              className="card-glow tl-lift flex overflow-hidden rounded-xl border border-border bg-card"
+            >
+              <div
+                className={`w-1.5 shrink-0 bg-gradient-to-b ${step.tint}`}
                 aria-hidden
-              >
-                {step.n}
-              </span>
-              <div>
-                <h2 className="text-lg font-semibold text-foreground">
-                  {step.title}
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {step.body}
-                </p>
+              />
+              <div className="flex flex-1 gap-4 p-5 sm:p-6">
+                <span
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-soft text-sm font-bold text-accent-dark"
+                  aria-hidden
+                >
+                  {step.n}
+                </span>
+                <div>
+                  <h2 className="tl-h2 text-lg font-semibold text-foreground">
+                    {step.title}
+                  </h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    {step.body}
+                  </p>
+                </div>
               </div>
-            </div>
-          </li>
-        ))}
-      </ol>
+            </li>
+          ))}
+        </ol>
+      </section>
 
-      <section className="rounded-xl border border-border bg-card p-6">
-        <h2 className="text-base font-semibold text-foreground">
-          What we do not claim
-        </h2>
-        <p className="mt-2 text-sm leading-relaxed text-muted">
+      <DarkBand eyebrow="Boundaries" title="What we do not claim">
+        <p>
           We do not promise better labs, fewer hospitalizations, cured disease,
           or autonomous recommendations. The twin is a learning and
           communication aid. Clinical decisions remain with the clinician.
         </p>
-      </section>
-
-      <p className="flex flex-wrap gap-4 text-sm font-semibold">
-        <Link href="/safety" className="text-accent-dark hover:underline">
-          Safety & compliance →
-        </Link>
-        <Link href="/product" className="text-accent-dark hover:underline">
-          Product overview →
-        </Link>
-      </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link
+            href="/safety"
+            className="tl-press inline-flex rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-navy hover:bg-slate-100"
+          >
+            Safety & compliance
+          </Link>
+          <Link
+            href="/product"
+            className="tl-press inline-flex rounded-lg border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/15"
+          >
+            Product overview
+          </Link>
+        </div>
+      </DarkBand>
     </div>
   );
 }

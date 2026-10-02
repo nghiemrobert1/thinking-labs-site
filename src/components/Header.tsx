@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Logo } from "@/components/Logo";
 
 const links = [
@@ -16,6 +16,27 @@ const links = [
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const panelId = useId();
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeBtnRef.current?.focus();
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-card/85 shadow-sm shadow-navy/5 backdrop-blur-xl">
@@ -34,55 +55,119 @@ export function Header() {
           </span>
         </Link>
 
-        <div className="flex items-center gap-2">
+        {/* Desktop nav */}
+        <nav
+          className="hidden items-center gap-0.5 md:flex"
+          aria-label="Primary"
+        >
+          {links.map((link) => {
+            const active =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`tl-nav-link relative rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                  active
+                    ? "bg-accent-soft text-accent-dark"
+                    : "text-muted hover:bg-violet-soft/50 hover:text-foreground"
+                }`}
+                aria-current={active ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <Link
+            href="/contact"
+            className="tl-press ml-2 inline-flex items-center justify-center rounded-lg bg-accent px-3.5 py-2 text-sm font-semibold text-white shadow-sm shadow-teal/20 transition hover:bg-accent-dark"
+          >
+            Contact
+          </Link>
+        </nav>
+
+        {/* Mobile menu button */}
+        <button
+          type="button"
+          className="tl-press inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground transition hover:border-teal/40 hover:bg-accent-soft/50 md:hidden"
+          aria-expanded={open}
+          aria-controls={panelId}
+          onClick={() => setOpen(true)}
+        >
+          <span className="flex flex-col gap-1" aria-hidden>
+            <span className="block h-0.5 w-4 rounded bg-foreground" />
+            <span className="block h-0.5 w-4 rounded bg-foreground" />
+            <span className="block h-0.5 w-4 rounded bg-foreground" />
+          </span>
+          Menu
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      {open ? (
+        <div className="md:hidden" role="presentation">
           <button
             type="button"
-            className="tl-press inline-flex items-center rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground transition hover:border-teal/40 hover:bg-accent-soft/50 md:hidden"
-            aria-expanded={open}
-            aria-controls="primary-nav"
-            onClick={() => setOpen((v) => !v)}
+            className="fixed inset-0 z-[60] bg-navy/40 backdrop-blur-[2px]"
+            aria-label="Close menu"
+            onClick={() => setOpen(false)}
+          />
+          <div
+            id={panelId}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site menu"
+            className="tl-drawer-in fixed inset-y-0 right-0 z-[70] flex w-[min(20rem,88vw)] flex-col border-l border-border bg-card shadow-2xl"
           >
-            {open ? "Close" : "Menu"}
-          </button>
-
-          <nav
-            id="primary-nav"
-            className={`${
-              open ? "flex" : "hidden"
-            } absolute left-0 right-0 top-full flex-col gap-1 border-b border-border bg-card/98 px-4 py-3 shadow-lg backdrop-blur-md md:static md:flex md:flex-row md:items-center md:gap-0.5 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
-            aria-label="Primary"
-          >
-            {links.map((link) => {
-              const active =
-                link.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(link.href);
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className={`tl-nav-link relative rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                    active
-                      ? "bg-accent-soft text-accent-dark"
-                      : "text-muted hover:bg-violet-soft/50 hover:text-foreground"
-                  }`}
-                  aria-current={active ? "page" : undefined}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="tl-press mt-1 inline-flex items-center justify-center rounded-lg bg-accent px-3.5 py-2 text-sm font-semibold text-white shadow-sm shadow-teal/20 transition hover:bg-accent-dark md:ml-2 md:mt-0"
-            >
-              Contact
-            </Link>
-          </nav>
+            <div className="flex items-center justify-between border-b border-border px-4 py-3">
+              <Logo size="sm" showWordmark />
+              <button
+                ref={closeBtnRef}
+                type="button"
+                className="tl-press rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-foreground hover:bg-slate-50"
+                onClick={() => setOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+            <nav className="flex flex-1 flex-col gap-1 p-3" aria-label="Mobile">
+              {links.map((link) => {
+                const active =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`rounded-lg px-3 py-3 text-sm font-medium ${
+                      active
+                        ? "bg-accent-soft text-accent-dark"
+                        : "text-foreground hover:bg-violet-soft/50"
+                    }`}
+                    aria-current={active ? "page" : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="tl-press mt-2 inline-flex items-center justify-center rounded-lg bg-accent px-3.5 py-3 text-sm font-semibold text-white"
+              >
+                Contact
+              </Link>
+            </nav>
+            <p className="border-t border-border px-4 py-3 text-xs text-muted">
+              Educational twin dashboards · Not a medical device
+            </p>
+          </div>
         </div>
-      </div>
+      ) : null}
     </header>
   );
 }

@@ -18,7 +18,7 @@ export function Logo({
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <svg
-        className={`${mark} shrink-0 drop-shadow-sm transition-transform duration-300 group-hover:scale-105`}
+        className={`tl-logo-enter ${mark} shrink-0 drop-shadow-sm transition-transform duration-300 group-hover:scale-105`}
         viewBox="0 0 48 48"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
