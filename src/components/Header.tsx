@@ -37,8 +37,10 @@ export function Header() {
     document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    closeBtnRef.current?.focus();
+    // Focus after paint so portal node exists
+    const t = window.setTimeout(() => closeBtnRef.current?.focus(), 0);
     return () => {
+      window.clearTimeout(t);
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
     };
@@ -47,21 +49,28 @@ export function Header() {
   const drawer =
     open && mounted
       ? createPortal(
-          <div className="md:hidden" role="presentation">
-            <button
-              type="button"
-              className="fixed inset-0 z-[60] bg-navy/40 backdrop-blur-[2px]"
-              aria-label="Close menu"
+          <>
+            {/* Full-viewport dismiss layer — outside blurred header via portal */}
+            <div
+              className="fixed inset-0 z-[100] md:hidden"
+              style={{ backgroundColor: "rgba(11, 31, 58, 0.55)" }}
+              aria-hidden="true"
               onClick={() => setOpen(false)}
             />
+            {/* Opaque panel */}
             <div
               id={panelId}
               role="dialog"
               aria-modal="true"
               aria-label="Site menu"
-              className="tl-drawer-in fixed inset-y-0 right-0 z-[70] flex w-[min(20rem,88vw)] flex-col border-l border-border bg-card shadow-2xl"
+              className="tl-drawer-in fixed inset-y-0 right-0 z-[110] flex w-[min(20rem,88vw)] flex-col border-l border-border shadow-2xl md:hidden"
+              style={{ backgroundColor: "#ffffff" }}
+              onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between border-b border-border px-4 py-3">
+              <div
+                className="flex items-center justify-between border-b border-border px-4 py-3"
+                style={{ backgroundColor: "#ffffff" }}
+              >
                 <Logo size="sm" showWordmark />
                 <button
                   ref={closeBtnRef}
@@ -73,8 +82,9 @@ export function Header() {
                 </button>
               </div>
               <nav
-                className="flex flex-1 flex-col gap-1 p-3"
+                className="flex flex-1 flex-col gap-1 overflow-y-auto p-3"
                 aria-label="Mobile"
+                style={{ backgroundColor: "#ffffff" }}
               >
                 {links.map((link) => {
                   const active =
@@ -105,11 +115,14 @@ export function Header() {
                   Contact
                 </Link>
               </nav>
-              <p className="border-t border-border px-4 py-3 text-xs text-muted">
+              <p
+                className="border-t border-border px-4 py-3 text-xs text-muted"
+                style={{ backgroundColor: "#ffffff" }}
+              >
                 Educational twin dashboards · Not a medical device
               </p>
             </div>
-          </div>,
+          </>,
           document.body
         )
       : null;
