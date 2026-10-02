@@ -1,39 +1,57 @@
 import Link from "next/link";
-import { HeroVisual } from "@/components/HeroVisual";
 import { DarkBand } from "@/components/DarkBand";
+import { HeroVisual } from "@/components/HeroVisual";
 import { Notice } from "@/components/Notice";
 
 export default function HomePage() {
   return (
     <div className="tl-page-enter space-y-12">
       <section className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12">
-        {/* On mobile: copy first, then compact hero */}
         <div className="order-1 space-y-5 sm:space-y-6">
           <p className="tl-animate-fade-up inline-flex items-center gap-2 rounded-full border border-teal/30 bg-accent-soft/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-dark">
             <span className="h-1.5 w-1.5 rounded-full bg-teal" aria-hidden />
             Thinking Labs, Inc.
           </p>
-          <h1 className="tl-animate-fade-up-delay max-w-xl text-[1.85rem] font-semibold leading-tight tracking-tight text-foreground sm:text-4xl sm:leading-tight lg:text-5xl">
+          <h1 className="tl-animate-fade-up-delay tl-display max-w-xl text-[1.85rem] font-semibold leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Educational twin dashboards for cardio-kidney-metabolic care
           </h1>
-          <p className="tl-animate-fade-up-delay-2 max-w-xl text-base text-muted sm:text-lg">
+          <p className="tl-animate-fade-up-delay-2 tl-lead max-w-xl text-base text-muted sm:text-lg">
             We build clear patient and clinician views that help people explore
             CKD-related trajectories together—with the doctor deciding what
             happens next. Learning tools first. Not a device. Not a diagnosis.
           </p>
-          <div className="tl-animate-fade-up-delay-2 flex flex-wrap gap-3">
-            <Link
-              href="/product"
-              className="inline-flex items-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal/20 transition hover:bg-accent-dark hover:shadow-lg hover:shadow-teal/25"
-            >
-              See the product
-            </Link>
-            <Link
-              href="/how-it-works"
-              className="inline-flex items-center rounded-lg border border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground transition hover:border-violet/40 hover:bg-violet-soft/50"
-            >
-              How it works
-            </Link>
+
+          <div className="tl-animate-fade-up-delay-2 space-y-3">
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/product"
+                className="tl-press inline-flex items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal/20 transition hover:bg-accent-dark hover:shadow-lg hover:shadow-teal/25"
+              >
+                See the product
+              </Link>
+              <Link
+                href="/how-it-works"
+                className="tl-press inline-flex items-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-violet/40 hover:bg-violet-soft/50"
+              >
+                How it works
+              </Link>
+            </div>
+            <p className="text-sm text-muted">
+              Prefer the framing first?{" "}
+              <Link
+                href="/safety"
+                className="font-semibold text-accent-dark underline-offset-2 hover:underline"
+              >
+                Safety & compliance
+              </Link>
+              <span className="text-border"> · </span>
+              <Link
+                href="/contact"
+                className="font-semibold text-accent-dark underline-offset-2 hover:underline"
+              >
+                Contact
+              </Link>
+            </p>
           </div>
         </div>
         <div className="order-2 tl-animate-fade-up-delay">
@@ -74,7 +92,7 @@ export default function HomePage() {
           >
             <div className={`h-1 w-full bg-gradient-to-r ${card.tint}`} aria-hidden />
             <div className="p-5">
-              <h2 className="text-base font-semibold text-foreground">
+              <h2 className="tl-h2 text-base font-semibold text-foreground">
                 {card.title}
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -92,14 +110,20 @@ export default function HomePage() {
           twin dashboards that make those conversations clearer—without
           promising outcomes, cures, or autonomous care.
         </p>
-        <p className="mt-4">
+        <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href="/about"
-            className="text-sm font-semibold text-teal-200 hover:text-white hover:underline"
+            className="tl-press inline-flex rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-navy hover:bg-slate-100"
           >
-            About Thinking Labs →
+            About Thinking Labs
           </Link>
-        </p>
+          <Link
+            href="/product"
+            className="tl-press inline-flex rounded-lg border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/15"
+          >
+            See the product
+          </Link>
+        </div>
       </DarkBand>
     </div>
   );

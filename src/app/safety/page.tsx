@@ -67,7 +67,7 @@ export default function SafetyPage() {
           {checklist.map((item) => (
             <li
               key={item}
-              className="flex items-start gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200"
+              className="flex items-start gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-100"
             >
               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" aria-hidden />
               {item}

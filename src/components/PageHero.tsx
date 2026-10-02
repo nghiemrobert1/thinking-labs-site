@@ -26,10 +26,12 @@ export function PageHero({
       />
       <div className="relative">
         <div className="card-accent-bar mb-4 h-1 w-16 rounded-full" aria-hidden />
-        <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        <h1 className="tl-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {title}
         </h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted">{lead}</p>
+        <p className="tl-lead mt-3 max-w-2xl text-base text-muted sm:text-lg">
+          {lead}
+        </p>
       </div>
     </div>
   );

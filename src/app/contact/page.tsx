@@ -26,7 +26,7 @@ export default function ContactPage() {
         </p>
         <a
           href="mailto:hello@thinkinglabs.com?subject=Thinking%20Labs%20inquiry"
-          className="tl-press inline-flex items-center gap-3 rounded-xl border border-teal/30 bg-teal/10 px-4 py-3 text-base font-semibold text-teal-100 transition hover:border-teal/50 hover:bg-teal/20"
+          className="tl-press inline-flex items-center gap-3 rounded-xl border border-teal/30 bg-teal/10 px-4 py-3 text-base font-semibold text-teal-50 transition hover:border-teal/50 hover:bg-teal/20"
         >
           <Logo showWordmark={false} size="sm" />
           hello@thinkinglabs.com

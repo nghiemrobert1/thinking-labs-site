@@ -3,7 +3,7 @@
 :root {
   --background: #f1f5fb;
   --foreground: #0b1f3a;
-  --muted: #5b6b7c;
+  --muted: #4a5a6b;
   --border: #d4dee9;
   --card: #ffffff;
   --accent: #0f766e;
@@ -213,4 +213,46 @@ button:focus-visible {
   .tl-press:active {
     transform: none;
   }
+}
+
+
+/* Pass-4: type, scroll, dark-band links */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+.tl-display {
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+.tl-lead {
+  line-height: 1.55;
+}
+.tl-h2 {
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+.tl-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+.tl-dark-prose a {
+  color: #99f6e4; /* teal-200 — AA on navy */
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tl-dark-prose a:hover {
+  color: #ccfbf1;
+}
+.tl-dark-prose strong {
+  color: #ffffff;
+  font-weight: 600;
 }
