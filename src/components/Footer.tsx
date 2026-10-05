@@ -1,5 +1,9 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
+import {
+  COMPANY_LEGAL_NAME,
+  COMPANY_MAILING_ADDRESSES,
+} from "@/lib/company";
 
 const cols = [
   {
@@ -35,8 +39,13 @@ export function Footer() {
               device. Not for diagnosis or treatment decisions alone.
             </p>
             <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-              Thinking Labs, Inc.
+              {COMPANY_LEGAL_NAME}
             </p>
+            <address className="mt-3 space-y-1 text-xs not-italic leading-relaxed text-slate-400">
+              {COMPANY_MAILING_ADDRESSES.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </address>
           </div>
 
           {cols.map((col) => (
@@ -63,7 +72,7 @@ export function Footer() {
         <div className="relative border-t border-white/10">
           <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6">
             <p>
-              © {new Date().getFullYear()} Thinking Labs, Inc. Educational /
+              © {new Date().getFullYear()} {COMPANY_LEGAL_NAME}. Educational /
               demonstrator software.
             </p>
             <p>Clinician judgment always governs care.</p>

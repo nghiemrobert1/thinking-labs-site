@@ -3,6 +3,10 @@ import { DarkBand } from "@/components/DarkBand";
 import { Logo } from "@/components/Logo";
 import { PageHero } from "@/components/PageHero";
 import { TechBand } from "@/components/TechBand";
+import {
+  COMPANY_CONTACT_EMAIL,
+  COMPANY_MAILING_ADDRESSES,
+} from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -25,16 +29,27 @@ export default function ContactPage() {
           general inquiries.
         </p>
         <a
-          href="mailto:robert@thinkinglabsinc.com?subject=Thinking%20Labs%20inquiry"
+          href={`mailto:${COMPANY_CONTACT_EMAIL}?subject=Thinking%20Labs%20inquiry`}
           className="tl-press inline-flex items-center gap-3 rounded-xl border border-teal/30 bg-teal/10 px-4 py-3 text-base font-semibold text-teal-50 transition hover:border-teal/50 hover:bg-teal/20"
         >
           <Logo showWordmark={false} size="sm" />
-          robert@thinkinglabsinc.com
+          {COMPANY_CONTACT_EMAIL}
         </a>
         <p className="mt-3 text-xs text-slate-400">
           Reaches Thinking Labs on the thinkinglabsinc.com Google Workspace
           inbox.
         </p>
+      </DarkBand>
+
+      <DarkBand eyebrow="Mailing addresses" title="Irvine, California">
+        <p className="mb-4 text-slate-300">
+          Thinking Labs, Inc. mailing addresses (both current):
+        </p>
+        <address className="space-y-2 text-base not-italic leading-relaxed text-teal-50">
+          {COMPANY_MAILING_ADDRESSES.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </address>
       </DarkBand>
 
       <section className="card-glow overflow-hidden rounded-2xl border border-dashed border-border bg-card">

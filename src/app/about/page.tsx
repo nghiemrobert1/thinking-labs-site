@@ -5,6 +5,10 @@ import { InfoCard } from "@/components/InfoCard";
 import { Logo } from "@/components/Logo";
 import { PageHero } from "@/components/PageHero";
 import { TechBand } from "@/components/TechBand";
+import {
+  COMPANY_LEGAL_NAME,
+  COMPANY_MAILING_ADDRESSES,
+} from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "About",
@@ -35,6 +39,17 @@ export default function AboutPage() {
           with clearer shared views. We are the manufacturer of the CKD Twin
           educational product line. Find us at thinkinglabsinc.com.
         </p>
+        <div className="mt-5 border-t border-white/10 pt-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-200/70">
+            Mailing addresses
+          </p>
+          <address className="mt-2 space-y-1 text-sm not-italic leading-relaxed text-slate-200">
+            {COMPANY_MAILING_ADDRESSES.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </address>
+          <p className="mt-2 text-xs text-slate-400">{COMPANY_LEGAL_NAME}</p>
+        </div>
       </DarkBand>
 
       <div className="grid gap-5 sm:grid-cols-2">
