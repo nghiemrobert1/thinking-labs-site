@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://thinking-labs-site.vercel.app/sitemap.xml",
+    sitemap: "https://thinkinglabsinc.com/sitemap.xml",
   };
 }

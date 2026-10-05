@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://thinking-labs-site.vercel.app";
+const siteUrl = "https://thinkinglabsinc.com";
 
 export const metadata: Metadata = {
   title: {

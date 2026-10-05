@@ -33,8 +33,7 @@ export default function AboutPage() {
           Thinking Labs builds software that helps people and care teams talk
           about chronic kidney disease and related cardio-metabolic context
           with clearer shared views. We are the manufacturer of the CKD Twin
-          educational product line. Custom domain planning is in progress;
-          this site ships on Vercel while that decision is open.
+          educational product line. Find us at thinkinglabsinc.com.
         </p>
       </DarkBand>
 

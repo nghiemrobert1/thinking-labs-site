@@ -6,7 +6,7 @@ import { TechBand } from "@/components/TechBand";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Thinking Labs, Inc. — email placeholder and coming-soon form.",
+  description: "Contact Thinking Labs, Inc. — email and coming-soon form.",
 };
 
 export default function ContactPage() {
@@ -21,19 +21,19 @@ export default function ContactPage() {
 
       <DarkBand eyebrow="Preferred channel" title="Email us">
         <p className="mb-4 text-slate-300">
-          Preferred for now. Replace with a dedicated inbox when the domain is
-          finalized.
+          Preferred channel for product questions, clinic conversations, and
+          general inquiries.
         </p>
         <a
-          href="mailto:hello@thinkinglabs.com?subject=Thinking%20Labs%20inquiry"
+          href="mailto:robert@thinkinglabsinc.com?subject=Thinking%20Labs%20inquiry"
           className="tl-press inline-flex items-center gap-3 rounded-xl border border-teal/30 bg-teal/10 px-4 py-3 text-base font-semibold text-teal-50 transition hover:border-teal/50 hover:bg-teal/20"
         >
           <Logo showWordmark={false} size="sm" />
-          hello@thinkinglabs.com
+          robert@thinkinglabsinc.com
         </a>
         <p className="mt-3 text-xs text-slate-400">
-          Placeholder address while domain ownership is confirmed. If mail
-          bounces, use your existing Thinking Labs contact channel.
+          Reaches Thinking Labs on the thinkinglabsinc.com Google Workspace
+          inbox.
         </p>
       </DarkBand>
 
