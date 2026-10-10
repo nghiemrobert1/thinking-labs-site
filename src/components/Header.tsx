@@ -138,11 +138,6 @@ export function Header() {
             aria-label="Thinking Labs home"
           >
             <Logo size="md" showWordmark />
-            <span className="tl-logo-tagline hidden border-l border-border pl-3 text-[11px] font-medium leading-tight text-muted lg:block">
-              Educational
-              <br />
-              twin dashboards
-            </span>
           </Link>
 
           <nav

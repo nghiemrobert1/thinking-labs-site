@@ -33,8 +33,14 @@ export function Footer() {
 
         <div className="relative mx-auto grid max-w-5xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Logo className="[&_span]:text-white" size="md" />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-300">
+            <Logo reversed size="md" />
+            <p className="mt-4 text-base font-semibold text-white">
+              Care for patients, not paperwork.
+            </p>
+            <p className="mt-2 text-sm text-slate-300">
+              Products: CKD Twin · Intake Twin — by Thinking Labs
+            </p>
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-300">
               Educational cardio-kidney-metabolic twin dashboards. Not a medical
               device. Not for diagnosis or treatment decisions alone.
             </p>
