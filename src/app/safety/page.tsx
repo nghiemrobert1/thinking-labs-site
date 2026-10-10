@@ -9,7 +9,7 @@ import { TechBand } from "@/components/TechBand";
 export const metadata: Metadata = {
   title: "Safety & compliance",
   description:
-    "Educational intent, FDA/TEMPO path in plain words, and HIPAA/BAA when clinics enroll — Thinking Labs.",
+    "Intended use, regulatory status in plain words, and HIPAA/BAA when clinics enroll — Thinking Labs.",
 };
 
 const checklist = [
@@ -35,21 +35,16 @@ export default function SafetyPage() {
       </Notice>
 
       <div className="grid gap-5 sm:grid-cols-3">
-        <InfoCard title="Educational intent" accent="teal">
-          CKD Twin and related Thinking Labs materials help patients and
-          clinicians explore cardio-kidney-metabolic concepts together. They
-          are not intended to diagnose, treat, cure, or prevent disease on their
-          own. Licensed clinicians retain full responsibility for care.
+        <InfoCard title="Intended use" accent="teal">
+          CKD Twin is not FDA cleared or approved. It supports clinician-supervised monitoring and care coordination; the treating clinician makes all care decisions. Predictive features are not enabled. CKD Twin does not diagnose, stage, or treat CKD on its own.
+          Licensed clinicians retain full responsibility for care decisions.
         </InfoCard>
-        <InfoCard title="FDA / TEMPO path" accent="violet">
-          We are <strong className="text-foreground">not claiming clearance
-          today</strong>. Longer term, if product features move beyond
-          educational demonstration, Thinking Labs expects to pursue an
-          appropriate U.S. regulatory pathway—which may include early programs
-          such as FDA’s TEMPO-related efforts for digital health innovation,
-          followed by the clearance or authorization route that fits the final
-          intended use. That work is future-facing. Nothing on this site
-          implies present FDA clearance.
+        <InfoCard title="Regulatory status" accent="violet">
+          CKD Twin is not FDA cleared or approved. We are working with FDA on
+          an appropriate regulatory pathway for clinician-supervised CKD
+          monitoring software. Features beyond the current intended use,
+          including predictive features, will not be enabled without the
+          required validation and regulatory steps.
         </InfoCard>
         <InfoCard title="HIPAA & BAAs" accent="navy">
           When clinics or health systems enroll for workflows that involve

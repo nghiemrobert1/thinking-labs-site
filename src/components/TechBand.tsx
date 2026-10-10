@@ -23,7 +23,7 @@ export function TechBand() {
           <path d="M220 48 H272 M528 48 H580" stroke="#64748B" strokeWidth="1" opacity="0.6" />
         </svg>
         <div className="absolute inset-0 flex items-center justify-between px-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300/80 sm:px-6">
-          <span>Educational twin</span>
+          <span>Abstract illustration — not clinical data</span>
           <span className="hidden sm:inline">Patient · Clinician</span>
           <span>Doctor decides</span>
         </div>

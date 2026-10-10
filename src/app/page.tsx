@@ -13,11 +13,11 @@ export default function HomePage() {
             Thinking Labs, Inc.
           </p>
           <h1 className="tl-animate-fade-up-delay tl-display max-w-xl text-[1.85rem] font-semibold leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Educational twin dashboards for cardio-kidney-metabolic care
+            Twin dashboards for cardio-kidney-metabolic care
           </h1>
           <p className="tl-animate-fade-up-delay-2 tl-lead max-w-xl text-base text-muted sm:text-lg">
-            We build clear patient and clinician views that help people explore
-            CKD-related trajectories together—with the doctor deciding what
+            We build clear patient and clinician views that help people follow
+            CKD trends over time together—with the doctor deciding what
             happens next. Built for clinician-supervised monitoring and care
             coordination.
           </p>
@@ -79,8 +79,8 @@ export default function HomePage() {
             stagger: "tl-stagger-2",
           },
           {
-            title: "Built for learning",
-            body: "POC and educational framing today. Validated AI components and regulatory pathways come later, on purpose.",
+            title: "Built for clinician-supervised monitoring",
+            body: "Shared views that support care coordination. Predictive features are not enabled; any future features follow validation and regulatory steps.",
             tint: "from-navy-mid/80 to-teal/40",
             stagger: "tl-stagger-3",
           },

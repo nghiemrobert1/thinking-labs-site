@@ -84,7 +84,7 @@ export function ProductVisual() {
       </div>
 
       <p className="relative mt-3 text-center text-[10px] font-medium tracking-wide text-slate-400">
-        Educational dual dashboards — not clinical data · doctor decides
+        Abstract illustration — not clinical data
       </p>
     </div>
   );

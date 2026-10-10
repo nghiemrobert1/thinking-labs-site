@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   keywords: [
     "Thinking Labs",
     "CKD Twin",
-    "educational dashboard",
+    "CKD monitoring dashboard",
     "cardio-kidney-metabolic",
     "clinician-supervised monitoring",
     "Intake Twin",

@@ -95,7 +95,7 @@ export default function ProductPage() {
             <ul className="mt-3 space-y-2 text-sm text-muted">
               <li className="flex gap-2">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet" aria-hidden />
-                Diagnostic software
+                Software that diagnoses, stages, or treats CKD on its own
               </li>
               <li className="flex gap-2">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet" aria-hidden />
@@ -110,12 +110,9 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <DarkBand eyebrow="Optional" title="Live educational demo">
+      <DarkBand eyebrow="Optional" title="Demo">
         <p>
-          A public educational demo may be available separately. It carries the
-          same framing: not FDA cleared or approved, and the treating clinician
-          makes all care decisions. Marketing site and demo app
-          are separate.
+          A demo with synthetic data may be available separately.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <a
