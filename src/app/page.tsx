@@ -68,7 +68,7 @@ export default function HomePage() {
         {[
           {
             title: "Patient view",
-            body: "Simple entry and feedback so people can see how habits and labs might relate to a trajectory—always under clinician guidance.",
+            body: "Simple entry and feedback so people can see how habits and labs relate to trends over time—always under clinician guidance.",
             tint: "from-teal/80 to-cyan/50",
             stagger: "tl-stagger-1",
           },
@@ -105,7 +105,7 @@ export default function HomePage() {
       <DarkBand eyebrow="Mission" title="Clearer conversations, clinicians in charge">
         <p>
           Chronic kidney disease and cardio-kidney-metabolic risk are hard to
-          talk about with numbers alone. Thinking Labs manufactures educational
+          talk about with numbers alone. Thinking Labs manufactures
           twin dashboards that make those conversations clearer—without
           promising outcomes, cures, or autonomous care.
         </p>

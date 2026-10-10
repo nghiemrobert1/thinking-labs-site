@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Thinking Labs, Inc. — manufacturer of educational CKD twin dashboards.",
+    "About Thinking Labs, Inc. — manufacturer of CKD twin dashboards.",
 };
 
 export default function AboutPage() {
@@ -21,7 +21,7 @@ export default function AboutPage() {
     <div className="tl-page-enter space-y-10">
       <PageHero
         title="About Thinking Labs"
-        lead="Thinking Labs, Inc. manufactures educational cardio-kidney-metabolic twin dashboards. We keep claims modest and clinicians in charge."
+        lead="Thinking Labs, Inc. manufactures cardio-kidney-metabolic twin dashboards. We keep claims modest and clinicians in charge."
       />
 
       <TechBand />
@@ -30,14 +30,14 @@ export default function AboutPage() {
         <div className="mb-4 inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
           <Logo showWordmark={false} size="md" />
           <span className="text-sm font-semibold text-white">
-            Twin dashboards · Educational framing
+            Twin dashboards · Clinician-supervised monitoring
           </span>
         </div>
         <p>
           Thinking Labs builds software that helps people and care teams talk
           about chronic kidney disease and related cardio-metabolic context
           with clearer shared views. We are the manufacturer of the CKD Twin
-          educational product line. Find us at thinkinglabsinc.com.
+          product line. Find us at thinkinglabsinc.com.
         </p>
         <div className="mt-5 border-t border-white/10 pt-4">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-200/70">

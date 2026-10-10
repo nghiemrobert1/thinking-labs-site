@@ -70,7 +70,7 @@ export function FlowVisual() {
         ))}
       </div>
       <p className="relative mt-4 text-center text-[11px] text-muted">
-        Educational care path — no outcome promises · doctor decides
+        Care path — no outcome promises · clinician decides
       </p>
     </div>
   );

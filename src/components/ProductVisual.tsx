@@ -1,4 +1,4 @@
-/** Dual educational dashboards — CKD twin care vibe, not finance charts. No PHI. */
+/** Dual dashboards — CKD twin care vibe, not finance charts. No PHI. */
 export function ProductVisual() {
   return (
     <div
@@ -69,7 +69,7 @@ export function ProductVisual() {
             <circle cx="90" cy="28" r="3.5" fill="#7C6CF0" />
           </svg>
           <div className="space-y-1.5">
-            {["Shared trajectory view", "Conversation prompts", "Care decision stays with you"].map(
+            {["Shared trends view", "Conversation prompts", "Care decision stays with you"].map(
               (row) => (
                 <div
                   key={row}

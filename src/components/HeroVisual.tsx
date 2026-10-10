@@ -1,4 +1,4 @@
-/** Clinical educational twin hero — vitals/labs panels + kidney motif. No PHI, no finance charts. */
+/** Clinical twin hero — vitals/labs panels + kidney motif. No PHI, no finance charts. */
 export function HeroVisual() {
   return (
     <div
@@ -76,11 +76,11 @@ export function HeroVisual() {
           </div>
         </div>
 
-        {/* Clinician — educational trajectory (smooth care curve, not ticker) */}
+        {/* Clinician — trends over time (smooth care curve, not ticker) */}
         <div className="rounded-xl border border-violet/30 bg-white/[0.07] p-3 backdrop-blur-sm sm:p-4">
           <div className="mb-2 flex items-center justify-between">
             <span className="text-[10px] font-bold uppercase tracking-wider text-violet-100/90">
-              Clinician · trajectory
+              Clinician · trends
             </span>
             <span className="rounded-full bg-violet/25 px-2 py-0.5 text-[9px] font-semibold text-violet-100">
               Review
@@ -107,7 +107,7 @@ export function HeroVisual() {
               strokeWidth="2.2"
             />
             <circle className="tl-node-pulse" cx="100" cy="38" r="4" fill="#7C6CF0" stroke="#EDE9FE" strokeWidth="1.5" />
-            <text x="8" y="18" fill="#94A3B8" fontSize="8" fontFamily="system-ui">Educational curve</text>
+            <text x="8" y="18" fill="#94A3B8" fontSize="8" fontFamily="system-ui">Trend over time</text>
           </svg>
           <div className="mt-1 flex gap-2">
             <div className="flex-1 rounded-md border border-white/10 bg-white/5 px-2 py-1.5 text-[9px] text-slate-300">

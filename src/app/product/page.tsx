@@ -17,7 +17,7 @@ export default function ProductPage() {
     <div className="tl-page-enter space-y-10">
       <PageHero
         title="Product: CKD Twin"
-        lead="Dual dashboards—patient and clinician—built as an educational trajectory demonstrator. Thinking Labs is the manufacturer."
+        lead="Dual dashboards—patient and clinician—for clinician-supervised CKD monitoring. Thinking Labs is the manufacturer."
       />
 
       <TechBand />
@@ -41,8 +41,8 @@ export default function ProductPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 A straightforward place to enter information and explore how
-                lifestyle and lab context can relate to a kidney-related
-                trajectory over time—presented as learning material, not a
+                lifestyle and lab context can relate to kidney-related
+                trends over time—shared with your clinician, not a
                 prescription.
               </p>
             </div>
@@ -76,7 +76,7 @@ export default function ProductPage() {
             <ul className="mt-3 space-y-2 text-sm text-muted">
               <li className="flex gap-2">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" aria-hidden />
-                Educational / POC demonstrator for cardio-kidney-metabolic discussion
+                Clinician-supervised monitoring for cardio-kidney-metabolic care
               </li>
               <li className="flex gap-2">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" aria-hidden />

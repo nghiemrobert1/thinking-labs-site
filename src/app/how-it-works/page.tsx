@@ -8,7 +8,7 @@ import { TechBand } from "@/components/TechBand";
 export const metadata: Metadata = {
   title: "How it works",
   description:
-    "Patient entry, clinician view, and a later validated AI path — educational framing from Thinking Labs.",
+    "Patient entry, clinician view, and a later validated AI path — from Thinking Labs.",
 };
 
 const steps = [
@@ -27,7 +27,7 @@ const steps = [
   {
     n: "3",
     title: "Later: validated AI brain",
-    body: "Over time we plan more rigorously validated modeling components. That work is separate from today’s educational demonstrator and will follow appropriate evaluation and regulatory steps. No outcome promises.",
+    body: "Over time we plan more rigorously validated modeling components. That work is separate from today’s software and will follow appropriate evaluation and regulatory steps. No outcome promises.",
     tint: "from-navy-mid to-teal",
   },
 ];

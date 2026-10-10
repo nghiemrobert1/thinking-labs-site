@@ -18,7 +18,7 @@ export default function ContactPage() {
     <div className="tl-page-enter space-y-10">
       <PageHero
         title="Contact"
-        lead="Reach Thinking Labs about the educational twin dashboards, clinic conversations, or general questions."
+        lead="Reach Thinking Labs about the twin dashboards, clinic conversations, or general questions."
       />
 
       <TechBand />
