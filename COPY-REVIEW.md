@@ -159,3 +159,16 @@ Title, meta and OG text no longer said "educational" after Round 1, so they need
 -  or outcome guarantees. Scope What this is — and is not Is Educational / POC demonstrator for cardio-kidney-metabolic discussion D
 ```
 Not changed (outside the listed edits). Need a decision: Product "Is: Educational / POC demonstrator…", Product hero lead, Home mission band, About page, How it works, Contact lead, and the hero visual's "Educational curve" / "Clinician · trajectory" labels.
+
+## Round 3 sweep (commit 3834684)
+
+Removed remaining "educational", "POC", and "trajectory" wording from CKD Twin copy and metadata:
+- HeroVisual: "Clinician · trajectory" → "Clinician · trends"; "Educational curve" → "Trend over time"
+- FlowVisual: → "Care path — no outcome promises · clinician decides"
+- ProductVisual: "Shared trajectory view" → "Shared trends view"
+- Home: "might relate to a trajectory" → "relate to trends over time"; dropped "educational" in manufacturer line
+- Product: lead → "Dual dashboards—patient and clinician—for clinician-supervised CKD monitoring. Thinking Labs is the manufacturer."; "trajectory over time—presented as learning material" → "trends over time—shared with your clinician, not a prescription"; "Educational / POC demonstrator…" → "Clinician-supervised monitoring for cardio-kidney-metabolic care"
+- How it works: dropped "educational framing"; "today's educational demonstrator" → "today's software"
+- About (meta, lead, tag, body) and Contact lead: dropped "educational"; About tag → "Twin dashboards · Clinician-supervised monitoring"
+
+`rg -i 'ducational|\bPOC\b|TEMPO|trajector' src` → no matches.
