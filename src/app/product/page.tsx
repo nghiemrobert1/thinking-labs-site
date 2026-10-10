@@ -9,7 +9,7 @@ import { TechBand } from "@/components/TechBand";
 export const metadata: Metadata = {
   title: "Product",
   description:
-    "CKD Twin educational dual dashboards from Thinking Labs — patient and clinician views. Not a medical device.",
+    "CKD Twin dual dashboards from Thinking Labs — patient and clinician views for clinician-supervised monitoring. Not FDA cleared or approved.",
 };
 
 export default function ProductPage() {
@@ -25,9 +25,9 @@ export default function ProductPage() {
       <ProductVisual />
 
       <Notice>
-        <strong>Not a medical device.</strong> Not cleared or approved by the
-        FDA for diagnosis, treatment, or independent clinical decision-making.
-        Outputs are educational. Your clinician decides.
+        <strong>CKD Twin is not FDA cleared or approved.</strong> It supports
+        clinician-supervised monitoring and care coordination; the treating
+        clinician makes all care decisions. Predictive features are not enabled.
       </Notice>
 
       <section>
@@ -113,7 +113,8 @@ export default function ProductPage() {
       <DarkBand eyebrow="Optional" title="Live educational demo">
         <p>
           A public educational demo may be available separately. It carries the
-          same non-device, non-diagnostic framing. Marketing site and demo app
+          same framing: not FDA cleared or approved, and the treating clinician
+          makes all care decisions. Marketing site and demo app
           are separate.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">

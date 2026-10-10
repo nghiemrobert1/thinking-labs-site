@@ -18,11 +18,11 @@ const siteUrl = "https://thinkinglabsinc.com";
 
 export const metadata: Metadata = {
   title: {
-    default: "Thinking Labs — Educational CKD twin dashboards",
+    default: "Thinking Labs — CKD Twin dashboards for cardio-kidney-metabolic care",
     template: "%s · Thinking Labs",
   },
   description:
-    "Thinking Labs, Inc. builds educational cardio-kidney-metabolic twin dashboards for patients and clinicians. Not a medical device. Doctor decides.",
+    "Thinking Labs, Inc. builds CKD Twin, cardio-kidney-metabolic twin dashboards for patients and clinicians. CKD Twin is not FDA cleared or approved. It supports clinician-supervised monitoring and care coordination; the treating clinician makes all care decisions. Predictive features are not enabled.",
   metadataBase: new URL(siteUrl),
   applicationName: "Thinking Labs",
   authors: [{ name: "Thinking Labs, Inc." }],
@@ -33,15 +33,16 @@ export const metadata: Metadata = {
     "CKD Twin",
     "educational dashboard",
     "cardio-kidney-metabolic",
-    "not a medical device",
+    "clinician-supervised monitoring",
+    "Intake Twin",
   ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Thinking Labs — Educational CKD twin dashboards",
+    title: "Thinking Labs — CKD Twin dashboards",
     description:
-      "Educational patient + clinician twin dashboards. Not a medical device. Doctor decides.",
+      "Patient + clinician CKD twin dashboards for clinician-supervised monitoring. Not FDA cleared or approved; the treating clinician makes all care decisions.",
     url: siteUrl,
     siteName: "Thinking Labs",
     locale: "en_US",
@@ -49,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Thinking Labs — Educational CKD twin dashboards",
+    title: "Thinking Labs — CKD Twin dashboards",
     description:
-      "Educational patient + clinician twin dashboards. Not a medical device. Doctor decides.",
+      "Patient + clinician CKD twin dashboards for clinician-supervised monitoring. Not FDA cleared or approved; the treating clinician makes all care decisions.",
   },
   robots: {
     index: true,

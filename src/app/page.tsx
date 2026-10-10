@@ -18,7 +18,8 @@ export default function HomePage() {
           <p className="tl-animate-fade-up-delay-2 tl-lead max-w-xl text-base text-muted sm:text-lg">
             We build clear patient and clinician views that help people explore
             CKD-related trajectories together—with the doctor deciding what
-            happens next. Learning tools first. Not a device. Not a diagnosis.
+            happens next. Built for clinician-supervised monitoring and care
+            coordination.
           </p>
 
           <div className="tl-animate-fade-up-delay-2 space-y-3">
@@ -60,9 +61,7 @@ export default function HomePage() {
       </section>
 
       <Notice>
-        Thinking Labs software is for education and demonstration. It is{" "}
-        <strong>not</strong> FDA-cleared, <strong>not</strong> a medical
-        device, and <strong>not</strong> a substitute for clinical judgment.
+        CKD Twin is not FDA cleared or approved. It supports clinician-supervised monitoring and care coordination; the treating clinician makes all care decisions. Predictive features are not enabled.
       </Notice>
 
       <section className="grid gap-6 sm:grid-cols-3">

@@ -136,7 +136,7 @@ export function HeroVisual() {
       </div>
 
       <p className="relative z-10 px-4 pb-3 text-[10px] font-medium tracking-wide text-slate-300/75 sm:px-6 sm:pb-4 sm:text-[11px]">
-        Abstract educational twin — not clinical data · not a device
+        Abstract illustration — not clinical data
       </p>
     </div>
   );

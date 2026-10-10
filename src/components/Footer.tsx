@@ -10,6 +10,7 @@ const cols = [
     title: "Product",
     links: [
       { href: "/product", label: "CKD Twin" },
+      { href: "/intake-twin", label: "Intake Twin" },
       { href: "/how-it-works", label: "How it works" },
     ],
   },
@@ -41,8 +42,9 @@ export function Footer() {
               Products: CKD Twin · Intake Twin — by Thinking Labs
             </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-300">
-              Educational cardio-kidney-metabolic twin dashboards. Not a medical
-              device. Not for diagnosis or treatment decisions alone.
+              CKD Twin supports clinician-supervised monitoring and care coordination;
+              the treating clinician makes all care decisions. See Safety &amp;
+              compliance for regulatory status.
             </p>
             <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
               {COMPANY_LEGAL_NAME}
@@ -78,8 +80,7 @@ export function Footer() {
         <div className="relative border-t border-white/10">
           <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6">
             <p>
-              © {new Date().getFullYear()} {COMPANY_LEGAL_NAME}. Educational /
-              demonstrator software.
+              © {new Date().getFullYear()} {COMPANY_LEGAL_NAME}. Healthcare software.
             </p>
             <p>Clinician judgment always governs care.</p>
           </div>

@@ -12,8 +12,8 @@ export default function NotFound() {
         Page not found
       </h1>
       <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-        That URL isn’t part of the Thinking Labs marketing site. Educational
-        twin dashboards live on the pages below—not a medical device.
+        That URL isn’t part of the Thinking Labs marketing site. Our
+        products live on the pages below.
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
         <Link

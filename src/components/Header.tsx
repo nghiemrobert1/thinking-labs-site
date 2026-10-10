@@ -8,7 +8,8 @@ import { Logo } from "@/components/Logo";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/product", label: "Product" },
+  { href: "/product", label: "CKD Twin" },
+  { href: "/intake-twin", label: "Intake Twin" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/safety", label: "Safety" },
   { href: "/about", label: "About" },
@@ -119,7 +120,7 @@ export function Header() {
                 className="border-t border-border px-4 py-3 text-xs text-muted"
                 style={{ backgroundColor: "#ffffff" }}
               >
-                Educational twin dashboards · Not a medical device
+                CKD Twin · Intake Twin — by Thinking Labs
               </p>
             </div>
           </>,

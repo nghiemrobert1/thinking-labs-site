@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 };
 
 const checklist = [
-  "Educational / demonstrator framing",
-  "Not a medical device (current)",
-  "Not FDA-cleared (current)",
-  "Doctor decides",
+  "CKD Twin: not FDA cleared or approved",
+  "Clinician-supervised monitoring and care coordination",
+  "The treating clinician makes all care decisions",
+  "Predictive features are not enabled",
   "HIPAA/BAA when clinics enroll for PHI workflows",
 ];
 
@@ -31,9 +31,7 @@ export default function SafetyPage() {
       <TechBand />
 
       <Notice>
-        Current software is intended for{" "}
-        <strong>education and demonstration</strong>. It is not FDA-cleared or
-        approved as a medical device.
+        CKD Twin is not FDA cleared or approved. It supports clinician-supervised monitoring and care coordination; the treating clinician makes all care decisions. Predictive features are not enabled.
       </Notice>
 
       <div className="grid gap-5 sm:grid-cols-3">
