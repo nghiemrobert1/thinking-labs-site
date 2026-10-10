@@ -114,3 +114,48 @@ Terms: device, triage, diagnos, abnormal, FDA, TEMPO. "device-width" hits are th
 - ing pages are not clinic enrollment. At a glance Safety checklist CKD Twin: not FDA cleared or approved Clinician-supervised monitoring and care coordination The t
 ```
 (Above grep was run before the Intake Twin OG/Twitter override; after the override, /intake-twin no longer carries the site-wide OG/Twitter FDA description. Re-verified: 0 hits on /intake-twin.)
+
+---
+
+# Round 2 (Titan feedback): commit 92706c4
+
+| # | Where | Before | After |
+|---|---|---|---|
+| R1 | Safety card | **FDA / TEMPO path**: We are not claiming clearance today. Longer term, if product features move beyond educational demonstration, Thinking Labs expects to pursue an appropriate U.S. regulatory pathway—which may include early programs such as FDA's TEMPO-related efforts for digital health innovation, followed by the clearance or authorization route that fits the final intended use. That work is future-facing. Nothing on this site implies present FDA clearance. | **Regulatory status**: CKD Twin is not FDA cleared or approved. We are working with FDA on an appropriate regulatory pathway for clinician-supervised CKD monitoring software. Features beyond the current intended use, including predictive features, will not be enabled without the required validation and regulatory steps. |
+| R1b | Safety meta description | Educational intent, FDA/TEMPO path in plain words, and HIPAA/BAA when clinics enroll — Thinking Labs. | Intended use, regulatory status in plain words, and HIPAA/BAA when clinics enroll — Thinking Labs. |
+| R2 | Product "Is not" list | Diagnostic software | Software that diagnoses, stages, or treats CKD on its own |
+| R3+R4 | Safety card | **Educational intent**: CKD Twin and related Thinking Labs materials help patients and clinicians explore cardio-kidney-metabolic concepts together. They are not intended to diagnose, treat, cure, or prevent disease on their own. Licensed clinicians retain full responsibility for care. | **Intended use**: CKD Twin is not FDA cleared or approved. It supports clinician-supervised monitoring and care coordination; the treating clinician makes all care decisions. Predictive features are not enabled. CKD Twin does not diagnose, stage, or treat CKD on its own. Licensed clinicians retain full responsibility for care decisions. |
+| R4 | Home H1 | Educational twin dashboards for cardio-kidney-metabolic care | Twin dashboards for cardio-kidney-metabolic care |
+| R4 | Home card 3 | **Built for learning**: POC and educational framing today. Validated AI components and regulatory pathways come later, on purpose. | **Built for clinician-supervised monitoring**: Shared views that support care coordination. Predictive features are not enabled; any future features follow validation and regulatory steps. |
+| R4 | Band label (Safety, Product, How it works pages) | Educational twin | Abstract illustration — not clinical data |
+| R4 | Product visual caption | Educational dual dashboards — not clinical data · doctor decides | Abstract illustration — not clinical data |
+| R4 | Product demo band | Title "Live educational demo"; "A public educational demo may be available separately. It carries the same framing: not FDA cleared or approved, and the treating clinician makes all care decisions. Marketing site and demo app are separate." | Title "Demo"; "A demo with synthetic data may be available separately." |
+| R4 | Meta keywords | "educational dashboard" | "CKD monitoring dashboard" |
+| R5 | Home hero | …help people explore CKD-related trajectories together… | …help people follow CKD trends over time together… |
+
+Title, meta and OG text no longer said "educational" after Round 1, so they needed no change. **TEMPO:** the only public mentions were the Safety card title and body and the Safety meta description (R1/R1b). The built site now has 0 TEMPO hits.
+
+## Round 2 leftovers (built site, visible text and meta): ducational / POC / trajector
+```
+### /about
+- ng Labs [meta: About Thinking Labs, Inc. — manufacturer of educational CKD twin dashboards.] [meta: Thinking Labs] [meta: Thinking
+-  Menu About Thinking Labs Thinking Labs, Inc. manufactures educational cardio-kidney-metabolic twin dashboards. We keep claims mod
+- decides Manufacturer Thinking Labs, Inc. Twin dashboards · Educational framing Thinking Labs builds software that helps people and
+- arer shared views. We are the manufacturer of the CKD Twin educational product line. Find us at thinkinglabsinc.com. Mailing addre
+### /contact
+- always governs care. Contact Reach Thinking Labs about the educational twin dashboards, clinic conversations, or general questions
+### /how-it-works
+- ent entry, clinician view, and a later validated AI path — educational framing from Thinking Labs.] [meta: Thinking Labs] [meta: T
+- overview 1 Patient entry 2 Clinician view 3 Later: AI path Educational care path — no outcome promises · doctor decides Steps 1 Pa
+- ed modeling components. That work is separate from today’s educational demonstrator and will follow appropriate evaluation and reg
+### /index
+- lood pressure A1c metabolic Habits daily inputs Clinician · trajectory Review Educational curve Context notes Doctor decides Pati
+- ack so people can see how habits and labs might relate to a trajectory—always under clinician guidance. Clinician view A companio
+-  talk about with numbers alone. Thinking Labs manufactures educational twin dashboards that make those conversations clearer—witho
+### /product
+- CKD Twin Dual dashboards—patient and clinician—built as an educational trajectory demonstrator. Thinking Labs is the manufacturer.
+- abits Lab context Questions for visit Twin Clinician Shared trajectory view Conversation prompts Care decision stays with you Abs
+- ow lifestyle and lab context can relate to a kidney-related trajectory over time—presented as learning material, not a prescripti
+-  or outcome guarantees. Scope What this is — and is not Is Educational / POC demonstrator for cardio-kidney-metabolic discussion D
+```
+Not changed (outside the listed edits). Need a decision: Product "Is: Educational / POC demonstrator…", Product hero lead, Home mission band, About page, How it works, Contact lead, and the hero visual's "Educational curve" / "Clinician · trajectory" labels.
