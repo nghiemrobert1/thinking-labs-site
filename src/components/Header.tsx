@@ -14,7 +14,7 @@ export function Header() {
     <header className="site-header">
       <div className="wrap">
         <Link href="/" aria-label="Thinking Labs home" className="brand">
-          <Logo />
+          <Logo blink />
           <span className="label brand-name">Thinking Labs</span>
         </Link>
         <nav aria-label="Primary" className="nav-desktop">
