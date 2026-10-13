@@ -29,7 +29,7 @@ export default function IntakeTwinPage() {
         <h1>Faxes and referrals in. Chart-ready documents out.</h1>
         <p className="sub">For primary care practices and specialist groups. Incoming faxes and scans (consult notes, discharge summaries, results, referrals) are read, sorted by patient and document type, and checked against insurance. Your team confirms each one, then files it to the chart.</p>
         <div className="cta"><Link className="btn" href="/contact">Book a demo</Link></div>
-        <div className="slogan">Care for patients, not paperwork.</div>
+        <div className="slogan">More patient care. Less paperwork.</div>
       </div>
 
       <section className="sec"><div className="wrap">

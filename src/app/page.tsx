@@ -62,7 +62,7 @@ export default function HomePage() {
       <section className="sec"><div className="wrap">
         <div className="label">Also from Thinking Labs</div>
         <div className="card also">
-          <div><h3 style={{ marginTop: 0 }}>Intake Twin</h3><p style={{ margin: 0 }}>Faxed referrals in, chart-ready intake out, confirmed by your staff. Care for patients, not paperwork.</p></div>
+          <div><h3 style={{ marginTop: 0 }}>Intake Twin</h3><p style={{ margin: 0 }}>Faxed referrals in, chart-ready intake out, confirmed by your staff. More patient care. Less paperwork.</p></div>
           <Link href="/intake-twin">Visit Intake Twin →</Link>
         </div>
       </div></section>
