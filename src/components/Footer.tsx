@@ -16,6 +16,7 @@ export function Footer() {
             <a className="link" href={`mailto:${COMPANY_CONTACT_EMAIL}`}>{COMPANY_CONTACT_EMAIL}</a>
           </p>
           <p>© {new Date().getFullYear()} {COMPANY_LEGAL_NAME} Clinician judgment always governs care.</p>
+          <p>Designed and developed by Thinking Labs, Inc.</p>
         </div>
         <div>
           <b>Products</b>
