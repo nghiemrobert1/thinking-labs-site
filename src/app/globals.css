@@ -69,5 +69,5 @@ address{font-style:normal}
 }
 .data-line{padding:28px 0;border-top:1px solid #ddd8cc}.data-line p{margin:0;font-size:15px;color:var(--ink)}
 @keyframes tl-blink{0%,49.999%{opacity:1}50%,100%{opacity:0}}
-.tl-cursor-blink{animation:tl-blink 1.06s step-end infinite}
+.tl-cursor-blink{animation:tl-blink 1.06s step-end 4}
 @media (prefers-reduced-motion:reduce){.tl-cursor-blink{animation:none;opacity:1}}
