@@ -3,7 +3,7 @@ import { COMPANY_ADDRESS, COMPANY_CONTACT_EMAIL } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Thinking Labs about CKD Twin or Intake Twin. Email robert@thinkinglabsinc.com. 15 Marconi Ste A, Irvine, CA 92618.",
+  description: "Contact Thinking Labs about CKD Twin or Intake Twin. Email info@thinkinglabsinc.com. 15 Marconi Ste A, Irvine, CA 92618.",
   alternates: { canonical: "/contact" },
 };
 

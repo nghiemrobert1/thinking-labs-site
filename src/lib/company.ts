@@ -5,7 +5,7 @@ export const COMPANY_CITY = "Irvine";
 export const COMPANY_REGION = "CA";
 export const COMPANY_POSTAL = "92618";
 export const COMPANY_ADDRESS = "15 Marconi Ste A, Irvine, CA 92618";
-export const COMPANY_CONTACT_EMAIL = "robert@thinkinglabsinc.com";
+export const COMPANY_CONTACT_EMAIL = "info@thinkinglabsinc.com";
 export const SITE_URL = "https://thinkinglabsinc.com";
 
 /** Cleared regulatory sentence. Keep verbatim. */
