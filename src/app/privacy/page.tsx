@@ -33,17 +33,27 @@ export default function PrivacyPage() {
         <h2>We don&rsquo;t sell personal or health data</h2>
         <p>We do not sell, rent or trade personal or health data, and we do not share it with anyone for their own advertising or marketing.</p>
 
+        {/* If analytics are ever added, update this page first. */}
         <h2>No ad or tracking pixels</h2>
-        <p>This website does not use advertising pixels or tracking tools such as Meta (Facebook) Pixel or Google Ads tags, and it does not use analytics services that resell data. We do not use cookies to track you across other websites.</p>
+        <p>This website does not use advertising pixels, analytics or tracking tools (such as Meta Pixel, Google Analytics or Google Ads tags), and we do not use cookies to track you across other websites.</p>
+
+        <h2>Patients of clinics using our software</h2>
+        <p>If you are a patient of a clinic that uses CKD Twin or Intake Twin, your health information is handled under that clinic&rsquo;s privacy practices and our agreements with the clinic, including HIPAA business associate agreements. Please contact your clinic with requests about your health records.</p>
 
         <h2>Vendors we use</h2>
         <p>We use a small number of service providers to run our business: a website hosting provider and an email provider. They process information only to provide those services to us, and not for their own advertising.</p>
+
+        <h2>Security</h2>
+        <p>We use reasonable administrative, technical and physical safeguards to protect the information we receive.</p>
 
         <h2>How long we keep it</h2>
         <p>We keep emails for as long as needed to respond to you and run our business, then delete them when they are no longer needed.</p>
 
         <h2>Your choices</h2>
         <p>You can ask us what information we have about you, ask us to correct it or ask us to delete it. Email {COMPANY_CONTACT_EMAIL} and we will respond.</p>
+
+        <h2>Children</h2>
+        <p>This website is not directed to children under 13, and we do not knowingly collect their information.</p>
 
         <h2>Contact us</h2>
         <address><p>{COMPANY_LEGAL_NAME}<br />{COMPANY_ADDRESS}<br /><a href={`mailto:${COMPANY_CONTACT_EMAIL}`}>{COMPANY_CONTACT_EMAIL}</a></p></address>

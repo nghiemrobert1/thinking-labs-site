@@ -33,7 +33,8 @@ export default function HomePage() {
         <div className="steps">
           <div className="step"><div className="n">TRENDS</div><h3>Measured values only</h3><p>eGFR is plotted as recorded, with a simple slope across past readings. Nothing is projected forward.</p></div>
           <div className="step"><div className="n">STAGING</div><h3>CKD stage category</h3><p>KDIGO categories (G1–G5) calculated from the latest labs are shown to the clinician to confirm. They are not a diagnosis.</p></div>
-          <div className="step"><div className="n">COMING SOON</div><h3>Connected home blood pressure cuff</h3><p>In development and not active. When available, readings from a cellular home blood pressure cuff will arrive in the patient&rsquo;s record automatically, so the care team can review measured values without manual entry.</p></div>
+          {/* PENDING: "validated" needs Robert's confirmation of the cuff's validation before production. */}
+          <div className="step"><div className="n">COMING SOON</div><h3>Connected home blood pressure cuff</h3><p>In development and not active. When available, readings from a validated cellular home blood pressure cuff will arrive in the patient&rsquo;s record automatically, so the care team can review measured values without manual entry.</p></div>
         </div>
       </div></section>
 
