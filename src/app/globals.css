@@ -67,3 +67,4 @@ address{font-style:normal}
  .cards,.steps,.two,.site-footer .wrap{grid-template-columns:1fr}
  .final{padding:32px}
 }
+.data-line{padding:28px 0;border-top:1px solid #ddd8cc}.data-line p{margin:0;font-size:15px;color:var(--ink)}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Faq } from "@/components/Faq";
+import { DataLine } from "@/components/DataLine";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/company";
 
@@ -71,6 +72,8 @@ export default function IntakeTwinPage() {
         <div className="final"><div><div className="label">Book a demo</div><h2>See Intake Twin on your own fax workflow.</h2></div><Link className="btn" href="/contact">Book a demo</Link></div>
         <p style={{ marginTop: 22 }}>Looking for kidney monitoring? <Link href="/">See CKD Twin →</Link></p>
       </div></section>
+
+      <DataLine />
 
       <JsonLd data={{
         "@context": "https://schema.org", "@type": "SoftwareApplication", name: "Intake Twin",

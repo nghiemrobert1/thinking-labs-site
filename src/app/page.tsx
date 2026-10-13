@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Faq } from "@/components/Faq";
+import { DataLine } from "@/components/DataLine";
 import { JsonLd } from "@/components/JsonLd";
 import { RegStatus } from "@/components/Notice";
 import { CKD_REGULATORY_STATUS, SITE_URL } from "@/lib/company";
@@ -66,6 +67,8 @@ export default function HomePage() {
           <Link href="/intake-twin">Visit Intake Twin →</Link>
         </div>
       </div></section>
+
+      <DataLine />
 
       <JsonLd data={{
         "@context": "https://schema.org",
