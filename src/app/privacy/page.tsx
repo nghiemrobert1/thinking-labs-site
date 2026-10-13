@@ -1,7 +1,3 @@
-/**
- * DRAFT: Privacy Policy pending review by Robert and Titan (regulatory). Not legal advice.
- * Do not promote to production until both have approved the wording.
- */
 import type { Metadata } from "next";
 import { COMPANY_ADDRESS, COMPANY_CONTACT_EMAIL, COMPANY_LEGAL_NAME } from "@/lib/company";
 

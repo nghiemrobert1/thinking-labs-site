@@ -5,7 +5,7 @@ import { DataLine } from "@/components/DataLine";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/company";
 
-const desc = "Intake Twin reads faxed referrals, checks insurance and prepares chart-ready intake. Your staff confirms every item before it is filed.";
+const desc = "Intake Twin reads faxed referrals, checks insurance and prepares chart-ready intake. Staff confirm every item before it is filed.";
 
 export const metadata: Metadata = {
   title: "Intake Twin | Faxed referrals to chart-ready intake",
