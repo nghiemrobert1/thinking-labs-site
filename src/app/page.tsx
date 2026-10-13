@@ -1,129 +1,82 @@
 import Link from "next/link";
-import { DarkBand } from "@/components/DarkBand";
-import { HeroVisual } from "@/components/HeroVisual";
-import { Notice } from "@/components/Notice";
+import { Faq } from "@/components/Faq";
+import { JsonLd } from "@/components/JsonLd";
+import { RegStatus } from "@/components/Notice";
+import { CKD_REGULATORY_STATUS, SITE_URL } from "@/lib/company";
+
+const faq = [
+  { q: "What is CKD Twin?", a: "CKD Twin is clinician-supervised monitoring software from Thinking Labs. Patients enter readings and lab values; the care team reviews past readings over time on a companion dashboard and decides what happens next." },
+  { q: "Is CKD Twin FDA cleared?", a: "No. " + CKD_REGULATORY_STATUS },
+  { q: "What does \"Twin\" mean?", a: "A shared view of a patient's own recorded data for the patient and their care team; no simulation or prediction." },
+  { q: "What does the CKD Twin trend show?", a: "Measured values only. eGFR is plotted as recorded, with a simple slope across past readings, and nothing is projected forward. KDIGO stage categories are shown to the clinician to confirm and are not a diagnosis." },
+  { q: "Who is Thinking Labs?", a: "Thinking Labs, Inc. is a healthcare software company in Irvine, California. It develops CKD Twin and Intake Twin." },
+];
 
 export default function HomePage() {
   return (
-    <div className="tl-page-enter space-y-12">
-      <section className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12">
-        <div className="order-1 space-y-5 sm:space-y-6">
-          <p className="tl-animate-fade-up inline-flex items-center gap-2 rounded-full border border-teal/30 bg-accent-soft/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-dark">
-            <span className="h-1.5 w-1.5 rounded-full bg-teal" aria-hidden />
-            Thinking Labs, Inc.
-          </p>
-          <h1 className="tl-animate-fade-up-delay tl-display max-w-xl text-[1.85rem] font-semibold leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Twin dashboards for cardio-kidney-metabolic care
-          </h1>
-          <p className="tl-animate-fade-up-delay-2 tl-lead max-w-xl text-base text-muted sm:text-lg">
-            We build clear patient and clinician views that help people follow
-            CKD trends over time together—with the doctor deciding what
-            happens next. Built for clinician-supervised monitoring and care
-            coordination.
-          </p>
+    <>
+      <div className="wrap hero">
+        <div className="label">CKD Twin · by Thinking Labs</div>
+        <h1>Shared CKD readings over time, for patients and their care team, with the clinician in charge.</h1>
+        <p className="sub">CKD Twin is a clinician-supervised monitoring platform. Patients enter readings and lab values; the care team reviews past readings over time on a companion dashboard and decides what happens next.</p>
+        <div className="cta"><Link className="btn" href="/contact">Contact Thinking Labs</Link><Link className="btn2" href="/how-it-works">How it works</Link></div>
+        <RegStatus />
+      </div>
 
-          <div className="tl-animate-fade-up-delay-2 space-y-3">
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/product"
-                className="tl-press inline-flex items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal/20 transition hover:bg-accent-dark hover:shadow-lg hover:shadow-teal/25"
-              >
-                See the product
-              </Link>
-              <Link
-                href="/how-it-works"
-                className="tl-press inline-flex items-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-violet/40 hover:bg-violet-soft/50"
-              >
-                How it works
-              </Link>
-            </div>
-            <p className="text-sm text-muted">
-              Prefer the framing first?{" "}
-              <Link
-                href="/safety"
-                className="font-semibold text-accent-dark underline-offset-2 hover:underline"
-              >
-                Safety & compliance
-              </Link>
-              <span className="text-border"> · </span>
-              <Link
-                href="/contact"
-                className="font-semibold text-accent-dark underline-offset-2 hover:underline"
-              >
-                Contact
-              </Link>
-            </p>
-          </div>
+      <section className="sec"><div className="wrap">
+        <div className="label">What CKD Twin does today</div>
+        <h2>Two views of the same record.</h2>
+        <div className="cards">
+          <div className="card"><span className="status">PATIENT VIEW</span><h3>Simple entry, phone-friendly</h3><p>Patients enter readings such as weight and lab results, or upload past readings from a CSV file. An entry assistant helps collect and confirm entries; it does not give clinical advice.</p></div>
+          <div className="card"><span className="status">CLINICIAN VIEW</span><h3>Roster and patient detail</h3><p>A patient roster shows who has logged recently. Each patient page shows vitals and measured eGFR readings from the past 12 months, with notes, history and CSV export. Structured information for the care team; the platform does not issue orders.</p></div>
         </div>
-        <div className="order-2 tl-animate-fade-up-delay">
-          <HeroVisual />
+        <div className="steps">
+          <div className="step"><div className="n">TRENDS</div><h3>Measured values only</h3><p>eGFR is plotted as recorded, with a simple slope across past readings. Nothing is projected forward.</p></div>
+          <div className="step"><div className="n">STAGING</div><h3>CKD stage category</h3><p>KDIGO categories (G1–G5) calculated from the latest labs are shown to the clinician to confirm. They are not a diagnosis.</p></div>
+          <div className="step"><div className="n">COMING SOON</div><h3>Connected home blood pressure cuff</h3><p>In development and not active. When available, readings from a cellular home blood pressure cuff will arrive in the patient&rsquo;s record automatically, so the care team can review measured values without manual entry.</p></div>
         </div>
-      </section>
+      </div></section>
 
-      <Notice>
-        CKD Twin is not FDA cleared or approved. It supports clinician-supervised monitoring and care coordination; the treating clinician makes all care decisions. Predictive features are not enabled.
-      </Notice>
-
-      <section className="grid gap-6 sm:grid-cols-3">
-        {[
-          {
-            title: "Patient view",
-            body: "Simple entry and feedback so people can see how habits and labs relate to trends over time—always under clinician guidance.",
-            tint: "from-teal/80 to-cyan/50",
-            stagger: "tl-stagger-1",
-          },
-          {
-            title: "Clinician view",
-            body: "A companion dashboard for the care team. Structured context, not automated orders. The clinician decides.",
-            tint: "from-violet/80 to-violet/40",
-            stagger: "tl-stagger-2",
-          },
-          {
-            title: "Built for clinician-supervised monitoring",
-            body: "Shared views that support care coordination. Predictive features are not enabled; any future features follow validation and regulatory steps.",
-            tint: "from-navy-mid/80 to-teal/40",
-            stagger: "tl-stagger-3",
-          },
-        ].map((card) => (
-          <article
-            key={card.title}
-            className={`card-glow group overflow-hidden rounded-xl border border-border bg-card transition hover:-translate-y-0.5 hover:border-teal/30 ${card.stagger}`}
-          >
-            <div className={`h-1 w-full bg-gradient-to-r ${card.tint}`} aria-hidden />
-            <div className="p-5">
-              <h2 className="tl-h2 text-base font-semibold text-foreground">
-                {card.title}
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {card.body}
-              </p>
-            </div>
-          </article>
-        ))}
-      </section>
-
-      <DarkBand eyebrow="Mission" title="Clearer conversations, clinicians in charge">
-        <p>
-          Chronic kidney disease and cardio-kidney-metabolic risk are hard to
-          talk about with numbers alone. Thinking Labs manufactures
-          twin dashboards that make those conversations clearer—without
-          promising outcomes, cures, or autonomous care.
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            href="/about"
-            className="tl-press inline-flex rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-navy hover:bg-slate-100"
-          >
-            About Thinking Labs
-          </Link>
-          <Link
-            href="/product"
-            className="tl-press inline-flex rounded-lg border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/15"
-          >
-            See the product
-          </Link>
+      <section className="sec"><div className="wrap two">
+        <div>
+          <div className="label">Safety &amp; regulatory</div>
+          <h2>Intended to support, not replace, clinical judgment.</h2>
+          <p className="lead">CKD Twin is designed for clinician-supervised monitoring and care coordination. Every screen carries the same reminder: the doctor decides.</p>
+          <Link href="/safety">Read safety &amp; regulatory details →</Link>
         </div>
-      </DarkBand>
-    </div>
+        <ul className="ticks">
+          <li><b>Intended use</b><span>Shared views that support monitoring and care coordination under a treating clinician.</span></li>
+          <li><b>Human oversight</b><span>The clinician reviews past readings and makes all care decisions. The platform does not issue orders.</span></li>
+          <li><b>Predictive features are not enabled</b><span>Any future features follow validation and regulatory steps.</span></li>
+          <li><b>Data in demonstrations</b><span>Current demonstrations use synthetic (made-up) patient data only.</span></li>
+        </ul>
+      </div></section>
+
+      <section className="sec"><div className="wrap two">
+        <div><div className="label">Contact</div><h2>For clinicians &amp; research partners</h2><p className="lead">We welcome conversations with nephrology clinicians and research partners about how CKD Twin should be evaluated.</p></div>
+        <div style={{ paddingTop: 40 }}><Link className="btn" href="/contact">Contact Thinking Labs</Link></div>
+      </div></section>
+
+      <Faq items={faq} />
+
+      <section className="sec"><div className="wrap">
+        <div className="label">Also from Thinking Labs</div>
+        <div className="card also">
+          <div><h3 style={{ marginTop: 0 }}>Intake Twin</h3><p style={{ margin: 0 }}>Faxed referrals in, chart-ready intake out, confirmed by your staff. Care for patients, not paperwork.</p></div>
+          <Link href="/intake-twin">Visit Intake Twin →</Link>
+        </div>
+      </div></section>
+
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "CKD Twin",
+        applicationCategory: "HealthApplication",
+        operatingSystem: "Web",
+        url: SITE_URL,
+        description: "Clinician-supervised CKD monitoring dashboards for patients and care teams. " + CKD_REGULATORY_STATUS,
+        publisher: { "@type": "Organization", name: "Thinking Labs, Inc.", url: SITE_URL },
+      }} />
+    </>
   );
 }

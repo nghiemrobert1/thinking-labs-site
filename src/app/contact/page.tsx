@@ -1,130 +1,27 @@
 import type { Metadata } from "next";
-import { DarkBand } from "@/components/DarkBand";
-import { Logo } from "@/components/Logo";
-import { PageHero } from "@/components/PageHero";
-import { TechBand } from "@/components/TechBand";
-import {
-  COMPANY_CONTACT_EMAIL,
-  COMPANY_MAILING_ADDRESSES,
-} from "@/lib/company";
+import { COMPANY_ADDRESS, COMPANY_CONTACT_EMAIL } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Thinking Labs, Inc. — email and coming-soon form.",
+  description: "Contact Thinking Labs about CKD Twin or Intake Twin. Email robert@thinkinglabsinc.com. 15 Marconi Ste A, Irvine, CA 92618.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   return (
-    <div className="tl-page-enter space-y-10">
-      <PageHero
-        title="Contact"
-        lead="Reach Thinking Labs about the twin dashboards, clinic conversations, or general questions."
-      />
-
-      <TechBand />
-
-      <DarkBand eyebrow="Preferred channel" title="Email us">
-        <p className="mb-4 text-slate-300">
-          Preferred channel for product questions, clinic conversations, and
-          general inquiries.
-        </p>
-        <a
-          href={`mailto:${COMPANY_CONTACT_EMAIL}?subject=Thinking%20Labs%20inquiry`}
-          className="tl-press inline-flex items-center gap-3 rounded-xl border border-teal/30 bg-teal/10 px-4 py-3 text-base font-semibold text-teal-50 transition hover:border-teal/50 hover:bg-teal/20"
-        >
-          <Logo showWordmark={false} size="sm" />
-          {COMPANY_CONTACT_EMAIL}
-        </a>
-        <p className="mt-3 text-xs text-slate-400">
-          Reaches Thinking Labs on the thinkinglabsinc.com Google Workspace
-          inbox.
-        </p>
-      </DarkBand>
-
-      <DarkBand eyebrow="Mailing addresses" title="Irvine, California">
-        <p className="mb-4 text-slate-300">
-          Thinking Labs, Inc. mailing addresses (both current):
-        </p>
-        <address className="space-y-2 text-base not-italic leading-relaxed text-teal-50">
-          {COMPANY_MAILING_ADDRESSES.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
-        </address>
-      </DarkBand>
-
-      <section className="card-glow overflow-hidden rounded-2xl border border-dashed border-border bg-card">
-        <div className="card-accent-bar h-1 w-full" aria-hidden />
-        <div className="p-6 sm:p-8">
-          <div className="mb-1 inline-flex items-center gap-2 rounded-full border border-border bg-slate-50 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted">
-            Coming soon
-          </div>
-          <h2 className="mt-2 text-lg font-semibold text-foreground">
-            Contact form — placeholder only
-          </h2>
-          <p className="mt-2 text-sm text-muted">
-            A working form is not live yet. Fields below are a visual placeholder
-            only and <strong>do not submit</strong>.
-          </p>
-
-          <div className="mt-6 space-y-4" aria-disabled="true">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-foreground"
-              >
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                disabled
-                placeholder="Coming soon"
-                className="mt-1 w-full rounded-lg border border-border bg-slate-50 px-3 py-2.5 text-sm text-muted disabled:cursor-not-allowed disabled:opacity-70"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-foreground"
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                disabled
-                placeholder="Coming soon"
-                className="mt-1 w-full rounded-lg border border-border bg-slate-50 px-3 py-2.5 text-sm text-muted disabled:cursor-not-allowed disabled:opacity-70"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-foreground"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                disabled
-                placeholder="Form submissions are not enabled yet. Please use email."
-                className="mt-1 w-full rounded-lg border border-border bg-slate-50 px-3 py-2.5 text-sm text-muted disabled:cursor-not-allowed disabled:opacity-70"
-              />
-            </div>
-            <button
-              type="button"
-              disabled
-              className="rounded-lg bg-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-500 disabled:cursor-not-allowed"
-            >
-              Submit (coming soon)
-            </button>
-          </div>
-        </div>
-      </section>
-    </div>
+    <>
+      <div className="wrap page-hero">
+        <div className="label">Contact</div>
+        <h1>Contact Thinking Labs</h1>
+        <p className="lead">For CKD Twin conversations with clinicians and research partners, Intake Twin demos, or general questions.</p>
+      </div>
+      <section className="sec"><div className="wrap cards" style={{ marginTop: 0 }}>
+        <div className="card"><span className="status">EMAIL</span><h2 style={{ fontSize: 24 }}>Email us</h2>
+          <p>To book an Intake Twin demo, include your clinic, your role, your EMR and roughly how many faxes you receive per day.</p>
+          <a className="btn" href={`mailto:${COMPANY_CONTACT_EMAIL}?subject=Thinking%20Labs%20inquiry`}>{COMPANY_CONTACT_EMAIL}</a></div>
+        <div className="card"><span className="status">ADDRESS</span><h2 style={{ fontSize: 24 }}>Irvine, California</h2>
+          <address><p>Thinking Labs, Inc.<br />{COMPANY_ADDRESS}</p></address></div>
+      </div></section>
+    </>
   );
 }

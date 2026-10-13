@@ -1,87 +1,73 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Courier_Prime, Inter } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  COMPANY_CITY, COMPANY_CONTACT_EMAIL, COMPANY_LEGAL_NAME, COMPANY_POSTAL,
+  COMPANY_REGION, COMPANY_STREET, SITE_URL,
+} from "@/lib/company";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const siteUrl = "https://thinkinglabsinc.com";
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const courier = Courier_Prime({ variable: "--font-courier", subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Thinking Labs — CKD Twin dashboards for cardio-kidney-metabolic care",
-    template: "%s · Thinking Labs",
+    default: "CKD Twin by Thinking Labs | Clinician-supervised CKD monitoring dashboards",
+    template: "%s | Thinking Labs",
   },
   description:
-    "Thinking Labs, Inc. builds CKD Twin, cardio-kidney-metabolic twin dashboards for patients and clinicians. CKD Twin is not FDA cleared or approved. It supports clinician-supervised monitoring and care coordination; the treating clinician makes all care decisions. Predictive features are not enabled.",
-  metadataBase: new URL(siteUrl),
+    "CKD Twin gives patients and clinicians shared views of kidney labs, blood pressure and vitals over time, for clinician-supervised monitoring. Not FDA cleared; the clinician decides.",
   applicationName: "Thinking Labs",
-  authors: [{ name: "Thinking Labs, Inc." }],
-  creator: "Thinking Labs, Inc.",
-  publisher: "Thinking Labs, Inc.",
-  keywords: [
-    "Thinking Labs",
-    "CKD Twin",
-    "CKD monitoring dashboard",
-    "cardio-kidney-metabolic",
-    "clinician-supervised monitoring",
-    "Intake Twin",
-  ],
-  alternates: {
-    canonical: "/",
-  },
+  authors: [{ name: COMPANY_LEGAL_NAME }],
+  publisher: COMPANY_LEGAL_NAME,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Thinking Labs — CKD Twin dashboards",
-    description:
-      "Patient + clinician CKD twin dashboards for clinician-supervised monitoring. Not FDA cleared or approved; the treating clinician makes all care decisions.",
-    url: siteUrl,
     siteName: "Thinking Labs",
     locale: "en_US",
     type: "website",
+    url: SITE_URL,
+    title: "CKD Twin by Thinking Labs",
+    description: "Shared CKD readings over time, for patients and their care team, with the clinician in charge.",
+    images: [{ url: "/brand/og-ckd.png", width: 1200, height: 630, alt: "CKD Twin by Thinking Labs" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Thinking Labs — CKD Twin dashboards",
-    description:
-      "Patient + clinician CKD twin dashboards for clinician-supervised monitoring. Not FDA cleared or approved; the treating clinician makes all care decisions.",
+    title: "CKD Twin by Thinking Labs",
+    description: "Shared CKD readings over time, for patients and their care team, with the clinician in charge.",
+    images: ["/brand/og-ckd.png"],
   },
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+};
+
+const org = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: COMPANY_LEGAL_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon.png`,
+  email: COMPANY_CONTACT_EMAIL,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: COMPANY_STREET,
+    addressLocality: COMPANY_CITY,
+    addressRegion: COMPANY_REGION,
+    postalCode: COMPANY_POSTAL,
+    addressCountry: "US",
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
-      >
-        <a href="#main-content" className="tl-skip-link">
-          Skip to main content
-        </a>
+    <html lang="en" className={`${inter.variable} ${courier.variable}`}>
+      <body>
+        <a href="#main-content" className="skip">Skip to main content</a>
         <Header />
-        <main
-          id="main-content"
-          tabIndex={-1}
-          className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6 sm:py-14"
-        >
-          {children}
-        </main>
+        <main id="main-content" tabIndex={-1}>{children}</main>
         <Footer />
+        <JsonLd data={org} />
       </body>
     </html>
   );

@@ -1,23 +1,13 @@
-/**
- * Public company facts for Thinking Labs, Inc. marketing pages.
- * Keep both Irvine mailing addresses — do not drop either.
- */
-
+/** Public company facts for Thinking Labs, Inc. One address only (Marconi). */
 export const COMPANY_LEGAL_NAME = "Thinking Labs, Inc.";
-
-/** Marconi address — show first on public pages. */
-export const COMPANY_MAILING_ADDRESS_MARCONI =
-  "15 Marconi Ste A, Irvine, CA 92618";
-
-/** Existing Irvine Blvd mailing address (keep; show below Marconi). */
-export const COMPANY_MAILING_ADDRESS_IRVINE_BLVD =
-  "3943 Irvine Blvd Ste 513, Irvine, CA 92602";
-
-/** Both addresses: Marconi on top, then Irvine Blvd. */
-export const COMPANY_MAILING_ADDRESSES = [
-  COMPANY_MAILING_ADDRESS_MARCONI,
-  COMPANY_MAILING_ADDRESS_IRVINE_BLVD,
-] as const;
-
+export const COMPANY_STREET = "15 Marconi Ste A";
+export const COMPANY_CITY = "Irvine";
+export const COMPANY_REGION = "CA";
+export const COMPANY_POSTAL = "92618";
+export const COMPANY_ADDRESS = "15 Marconi Ste A, Irvine, CA 92618";
 export const COMPANY_CONTACT_EMAIL = "robert@thinkinglabsinc.com";
-export const COMPANY_CONTACT_TITLE = "President";
+export const SITE_URL = "https://thinkinglabsinc.com";
+
+/** Titan-cleared regulatory sentence. Keep verbatim. */
+export const CKD_REGULATORY_STATUS =
+  "CKD Twin is not FDA cleared or approved. It supports clinician-supervised monitoring and care coordination; the treating clinician makes all care decisions. Predictive features are not enabled.";

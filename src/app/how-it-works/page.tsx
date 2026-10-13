@@ -1,106 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DarkBand } from "@/components/DarkBand";
-import { FlowVisual } from "@/components/FlowVisual";
-import { PageHero } from "@/components/PageHero";
-import { TechBand } from "@/components/TechBand";
+import { RegStatus } from "@/components/Notice";
 
 export const metadata: Metadata = {
-  title: "How it works",
-  description:
-    "Patient entry, clinician view, and a later validated AI path — from Thinking Labs.",
+  title: "How CKD Twin works",
+  description: "How CKD Twin works: patients enter readings, the care team reviews measured values over time, and the clinician decides. Not FDA cleared.",
+  alternates: { canonical: "/how-it-works" },
 };
 
 const steps = [
-  {
-    n: "1",
-    title: "Patient entry",
-    body: "The patient (or care partner) shares information in a clear interface designed for education—not for unsupervised medical advice.",
-    tint: "from-teal to-cyan",
-  },
-  {
-    n: "2",
-    title: "Clinician view",
-    body: "The clinician sees a structured companion dashboard. Conversation and decisions stay with the licensed care team.",
-    tint: "from-violet to-violet/60",
-  },
-  {
-    n: "3",
-    title: "Later: validated AI brain",
-    body: "Over time we plan more rigorously validated modeling components. That work is separate from today’s software and will follow appropriate evaluation and regulatory steps. No outcome promises.",
-    tint: "from-navy-mid to-teal",
-  },
+  { n: "01", t: "Patient entry", b: "Patients enter readings such as weight and lab results, or upload past readings from a CSV file. An entry assistant helps collect and confirm entries; it does not give clinical advice." },
+  { n: "02", t: "Clinician review", b: "The care team sees a roster and each patient's measured eGFR readings and vitals over time, with notes, history and CSV export. The platform does not issue orders." },
+  { n: "03", t: "The clinician decides", b: "Conversation and care decisions stay with the licensed care team. Nothing is projected forward, and stage categories are shown to the clinician to confirm." },
 ];
 
 export default function HowItWorksPage() {
   return (
-    <div className="tl-page-enter space-y-10">
-      <PageHero
-        title="How it works"
-        lead="A simple path from patient entry to clinician review—with any advanced AI validation coming later, on purpose."
-      />
-
-      <TechBand />
-
-      <section>
-        <p className="tl-eyebrow mb-3">Path overview</p>
-        <FlowVisual />
-      </section>
-
-      <section>
-        <p className="tl-eyebrow mb-3">Steps</p>
-        <ol className="space-y-4">
-          {steps.map((step) => (
-            <li
-              key={step.n}
-              className="card-glow tl-lift flex overflow-hidden rounded-xl border border-border bg-card"
-            >
-              <div
-                className={`w-1.5 shrink-0 bg-gradient-to-b ${step.tint}`}
-                aria-hidden
-              />
-              <div className="flex flex-1 gap-4 p-5 sm:p-6">
-                <span
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-soft text-sm font-bold text-accent-dark"
-                  aria-hidden
-                >
-                  {step.n}
-                </span>
-                <div>
-                  <h2 className="tl-h2 text-lg font-semibold text-foreground">
-                    {step.title}
-                  </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {step.body}
-                  </p>
-                </div>
-              </div>
-            </li>
+    <>
+      <div className="wrap page-hero">
+        <div className="label">How it works</div>
+        <h1>From patient entry to clinician review.</h1>
+        <p className="lead">A shared view of a patient&rsquo;s own recorded data; no simulation or prediction.</p>
+        <RegStatus />
+      </div>
+      <section className="sec"><div className="wrap">
+        <div className="steps" style={{ marginTop: 0 }}>
+          {steps.map((s) => (
+            <div className="step" key={s.n}><div className="n">{s.n}</div><h2 style={{ fontSize: 20 }}>{s.t}</h2><p>{s.b}</p></div>
           ))}
-        </ol>
-      </section>
-
-      <DarkBand eyebrow="Boundaries" title="What we do not claim">
-        <p>
-          We do not promise better labs, fewer hospitalizations, cured disease,
-          or autonomous recommendations. The twin is a learning and
-          communication aid. Clinical decisions remain with the clinician.
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            href="/safety"
-            className="tl-press inline-flex rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-navy hover:bg-slate-100"
-          >
-            Safety & compliance
-          </Link>
-          <Link
-            href="/product"
-            className="tl-press inline-flex rounded-lg border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/15"
-          >
-            Product overview
-          </Link>
         </div>
-      </DarkBand>
-    </div>
+      </div></section>
+      <section className="sec"><div className="wrap two">
+        <div><div className="label">Boundaries</div><h2>Supports conversations; the clinician decides.</h2>
+          <p className="lead">CKD Twin is a communication aid for patients and their care team. Clinical decisions remain with the clinician.</p></div>
+        <div style={{ paddingTop: 40 }} className="cta"><Link className="btn" href="/safety">Safety &amp; regulatory</Link><Link className="btn2" href="/contact">Contact</Link></div>
+      </div></section>
+    </>
   );
 }

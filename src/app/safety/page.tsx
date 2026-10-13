@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DarkBand } from "@/components/DarkBand";
-import { InfoCard } from "@/components/InfoCard";
-import { Notice } from "@/components/Notice";
-import { PageHero } from "@/components/PageHero";
-import { TechBand } from "@/components/TechBand";
+import { RegStatus } from "@/components/Notice";
+import { CKD_REGULATORY_STATUS } from "@/lib/company";
 
 export const metadata: Metadata = {
-  title: "Safety & compliance",
-  description:
-    "Intended use, regulatory status in plain words, and HIPAA/BAA when clinics enroll — Thinking Labs.",
+  title: "Safety & regulatory",
+  description: "CKD Twin regulatory status, intended use and human oversight, in plain words. Not FDA cleared; the treating clinician makes all care decisions.",
+  alternates: { canonical: "/safety" },
 };
 
 const checklist = [
@@ -22,61 +19,25 @@ const checklist = [
 
 export default function SafetyPage() {
   return (
-    <div className="tl-page-enter space-y-10">
-      <PageHero
-        title="Safety & compliance"
-        lead="Plain-language framing for where we are today—and what comes later when clinics enroll."
-      />
-
-      <TechBand />
-
-      <Notice>
-        CKD Twin is not FDA cleared or approved. It supports clinician-supervised monitoring and care coordination; the treating clinician makes all care decisions. Predictive features are not enabled.
-      </Notice>
-
-      <div className="grid gap-5 sm:grid-cols-3">
-        <InfoCard title="Intended use" accent="teal">
-          CKD Twin is not FDA cleared or approved. It supports clinician-supervised monitoring and care coordination; the treating clinician makes all care decisions. Predictive features are not enabled. CKD Twin does not diagnose, stage, or treat CKD on its own.
-          Licensed clinicians retain full responsibility for care decisions.
-        </InfoCard>
-        <InfoCard title="Regulatory status" accent="violet">
-          CKD Twin is not FDA cleared or approved. We are working with FDA on
-          an appropriate regulatory pathway for clinician-supervised CKD
-          monitoring software. Features beyond the current intended use,
-          including predictive features, will not be enabled without the
-          required validation and regulatory steps.
-        </InfoCard>
-        <InfoCard title="HIPAA & BAAs" accent="navy">
-          When clinics or health systems enroll for workflows that involve
-          protected health information, Thinking Labs will put Business
-          Associate Agreements (BAAs) and appropriate safeguards in place
-          before those deployments. Public demos and marketing pages are not
-          clinic enrollment.
-        </InfoCard>
+    <>
+      <div className="wrap page-hero">
+        <div className="label">Safety &amp; regulatory</div>
+        <h1>Safety &amp; regulatory</h1>
+        <p className="lead">Plain-language framing for where we are today, and what comes later when clinics enroll.</p>
+        <RegStatus />
       </div>
-
-      <DarkBand eyebrow="At a glance" title="Safety checklist">
-        <ul className="mt-1 grid gap-2 sm:grid-cols-2">
-          {checklist.map((item) => (
-            <li
-              key={item}
-              className="flex items-start gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-100"
-            >
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" aria-hidden />
-              {item}
-            </li>
-          ))}
-        </ul>
-      </DarkBand>
-
-      <p>
-        <Link
-          href="/contact"
-          className="text-sm font-semibold text-accent-dark hover:underline"
-        >
-          Questions? Contact us →
-        </Link>
-      </p>
-    </div>
+      <section className="sec"><div className="wrap">
+        <div className="steps" style={{ marginTop: 0 }}>
+          <div className="step"><div className="n">INTENDED USE</div><h2 style={{ fontSize: 20 }}>Intended use</h2><p>{CKD_REGULATORY_STATUS} CKD Twin does not diagnose, stage, or treat CKD on its own. Licensed clinicians retain full responsibility for care decisions.</p></div>
+          <div className="step"><div className="n">REGULATORY STATUS</div><h2 style={{ fontSize: 20 }}>Regulatory status</h2><p>CKD Twin is not FDA cleared or approved. We are working with FDA on an appropriate regulatory pathway for clinician-supervised CKD monitoring software. Features beyond the current intended use, including predictive features, will not be enabled without the required validation and regulatory steps.</p></div>
+          <div className="step"><div className="n">HIPAA &amp; BAAS</div><h2 style={{ fontSize: 20 }}>HIPAA &amp; BAAs</h2><p>When clinics or health systems enroll for workflows that involve protected health information, Thinking Labs will put Business Associate Agreements (BAAs) and appropriate safeguards in place before those deployments. Public demos and marketing pages are not clinic enrollment.</p></div>
+        </div>
+      </div></section>
+      <section className="sec"><div className="wrap two">
+        <div><div className="label">At a glance</div><h2>Safety checklist</h2><p className="lead">Intake Twin is administrative software, not a medical device. A person confirms every step before anything is filed.</p></div>
+        <ul className="ticks">{checklist.map((c) => <li key={c}><b>{c}</b></li>)}</ul>
+      </div></section>
+      <section className="sec"><div className="wrap"><Link href="/contact">Questions? Contact us →</Link></div></section>
+    </>
   );
 }

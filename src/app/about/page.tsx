@@ -1,84 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DarkBand } from "@/components/DarkBand";
-import { InfoCard } from "@/components/InfoCard";
-import { Logo } from "@/components/Logo";
-import { PageHero } from "@/components/PageHero";
-import { TechBand } from "@/components/TechBand";
-import {
-  COMPANY_LEGAL_NAME,
-  COMPANY_MAILING_ADDRESSES,
-} from "@/lib/company";
+import { COMPANY_ADDRESS, COMPANY_CONTACT_EMAIL, COMPANY_LEGAL_NAME } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "About Thinking Labs, Inc. — manufacturer of CKD twin dashboards.",
+  description: "Thinking Labs, Inc. is a healthcare software company in Irvine, California that develops CKD Twin and Intake Twin.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
   return (
-    <div className="tl-page-enter space-y-10">
-      <PageHero
-        title="About Thinking Labs"
-        lead="Thinking Labs, Inc. manufactures cardio-kidney-metabolic twin dashboards. We keep claims modest and clinicians in charge."
-      />
-
-      <TechBand />
-
-      <DarkBand eyebrow="Manufacturer" title="Thinking Labs, Inc.">
-        <div className="mb-4 inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-          <Logo showWordmark={false} size="md" />
-          <span className="text-sm font-semibold text-white">
-            Twin dashboards · Clinician-supervised monitoring
-          </span>
-        </div>
-        <p>
-          Thinking Labs builds software that helps people and care teams talk
-          about chronic kidney disease and related cardio-metabolic context
-          with clearer shared views. We are the manufacturer of the CKD Twin
-          product line. Find us at thinkinglabsinc.com.
-        </p>
-        <div className="mt-5 border-t border-white/10 pt-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-200/70">
-            Mailing addresses
-          </p>
-          <address className="mt-2 space-y-1 text-sm not-italic leading-relaxed text-slate-200">
-            {COMPANY_MAILING_ADDRESSES.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
-          </address>
-          <p className="mt-2 text-xs text-slate-400">{COMPANY_LEGAL_NAME}</p>
-        </div>
-      </DarkBand>
-
-      <div className="grid gap-5 sm:grid-cols-2">
-        <InfoCard title="Clinical advisors" accent="teal">
-          Thinking Labs works with clinical advisors on clarity and safety
-          framing. Advisor relationships do <em>not</em> mean Thinking Labs
-          employs clinicians as manufacturer staff or practices medicine.
-          Clinical care remains with each patient’s own licensed providers.
-        </InfoCard>
-        <InfoCard title="What we avoid" accent="violet">
-          <ul className="list-disc space-y-2 pl-5">
-            <li>Cure or outcome guarantees</li>
-            <li>Implying FDA clearance we do not have</li>
-            <li>
-              Presenting advisory relationships as employment or clinical
-              practice by the company
-            </li>
-          </ul>
-        </InfoCard>
+    <>
+      <div className="wrap page-hero">
+        <div className="label">About</div>
+        <h1>About Thinking Labs</h1>
+        <p className="lead">Thinking Labs, Inc. develops healthcare software: CKD Twin for clinician-supervised CKD monitoring, and Intake Twin for fax and referral intake. We keep claims modest and clinicians in charge.</p>
       </div>
-
-      <p>
-        <Link
-          href="/contact"
-          className="tl-press inline-flex items-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-teal/20 hover:bg-accent-dark"
-        >
-          Get in touch →
-        </Link>
-      </p>
-    </div>
+      <section className="sec"><div className="wrap two">
+        <div className="prose">
+          <div className="label">The company</div>
+          <h2>{COMPANY_LEGAL_NAME}</h2>
+          <p>Thinking Labs builds software that helps patients and care teams look at chronic kidney disease readings together with clearer shared views, and helps practices spend less time on paperwork.</p>
+          <address><p>{COMPANY_ADDRESS}<br /><a href={`mailto:${COMPANY_CONTACT_EMAIL}`}>{COMPANY_CONTACT_EMAIL}</a></p></address>
+        </div>
+        <ul className="ticks">
+          <li><b>Clinical advisors</b><span>Thinking Labs works with clinical advisors on clarity and safety framing. Advisor relationships do not mean Thinking Labs employs clinicians or practices medicine. Clinical care remains with each patient&rsquo;s own licensed providers.</span></li>
+          <li><b>How we describe our work</b><span>Plainly: CKD Twin supports conversations and care coordination, and the clinician decides. We state regulatory status as it is.</span></li>
+        </ul>
+      </div></section>
+      <section className="sec"><div className="wrap"><Link className="btn" href="/contact">Get in touch</Link></div></section>
+    </>
   );
 }

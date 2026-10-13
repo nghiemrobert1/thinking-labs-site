@@ -1,21 +1,10 @@
 import type { MetadataRoute } from "next";
-
-const base = "https://thinkinglabsinc.com";
+import { SITE_URL } from "@/lib/company";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = [
-    "",
-    "/product",
-    "/intake-twin",
-    "/how-it-works",
-    "/safety",
-    "/about",
-    "/contact",
-  ];
-  return paths.map((path) => ({
-    url: `${base}${path}`,
-    lastModified: new Date(),
+  return ["", "/intake-twin", "/how-it-works", "/safety", "/about", "/contact"].map((p) => ({
+    url: `${SITE_URL}${p}`,
     changeFrequency: "monthly" as const,
-    priority: path === "" ? 1 : 0.7,
+    priority: p === "" ? 1 : 0.7,
   }));
 }
