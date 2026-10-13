@@ -8,7 +8,6 @@ import { CKD_REGULATORY_STATUS, SITE_URL } from "@/lib/company";
 const faq = [
   { q: "What is CKD Twin?", a: "CKD Twin is clinician-supervised monitoring software from Thinking Labs. Patients enter readings and lab values; the care team reviews past readings over time on a companion dashboard and decides what happens next." },
   { q: "Is CKD Twin FDA cleared?", a: "No. " + CKD_REGULATORY_STATUS },
-  { q: "What does \"Twin\" mean?", a: "A shared view of a patient's own recorded data for the patient and their care team; no simulation or prediction." },
   { q: "What does the CKD Twin trend show?", a: "Measured values only. eGFR is plotted as recorded, with a simple slope across past readings, and nothing is projected forward. KDIGO stage categories are shown to the clinician to confirm and are not a diagnosis." },
   { q: "Who is Thinking Labs?", a: "Thinking Labs, Inc. is a healthcare software company in Irvine, California. It develops CKD Twin and Intake Twin." },
 ];

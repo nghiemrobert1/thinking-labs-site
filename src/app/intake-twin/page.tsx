@@ -44,7 +44,7 @@ export default function IntakeTwinPage() {
       </div></section>
 
       <section className="sec"><div className="wrap two">
-        <div><div className="label">Safety</div><h2>A person confirms every step.</h2><p className="lead">Intake Twin prepares the work. Your staff makes the call.</p><p style={{ color: "var(--graphite)", fontSize: 15 }}>Intake Twin is administrative software, not a medical device.</p></div>
+        <div><div className="label">Safety</div><h2>Staff confirms every entry.</h2><p className="lead">Intake Twin prepares the work. Your staff makes the call.</p><p style={{ color: "var(--graphite)", fontSize: 15 }}>Intake Twin is administrative software, not a medical device.</p></div>
         <ul className="ticks">
           <li><b>Nothing filed without a person</b><span>Staff confirm the patient match and document split before upload.</span></li>
           <li><b>New charts need approval</b><span>Intake Twin never creates a chart on its own.</span></li>

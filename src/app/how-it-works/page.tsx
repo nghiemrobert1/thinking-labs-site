@@ -20,7 +20,7 @@ export default function HowItWorksPage() {
       <div className="wrap page-hero">
         <div className="label">How it works</div>
         <h1>From patient entry to clinician review.</h1>
-        <p className="lead">A shared view of a patient&rsquo;s own recorded data; no simulation or prediction.</p>
+        <p className="lead">Patients enter readings, the care team reviews them over time, and the clinician decides.</p>
         <RegStatus />
       </div>
       <section className="sec"><div className="wrap">
