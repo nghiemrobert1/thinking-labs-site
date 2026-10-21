@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
+import { MobileMenu } from "@/components/MobileMenu";
 
 export const NAV = [
   { href: "/", label: "CKD Twin" },
@@ -23,15 +24,7 @@ export function Header() {
           ))}
         </nav>
         <Link className="btn nav-cta" href="/contact">Contact us</Link>
-        <details className="nav-mobile">
-          <summary>Menu</summary>
-          <nav aria-label="Mobile">
-            {NAV.map((l) => (
-              <Link key={l.href} href={l.href}>{l.label}</Link>
-            ))}
-            <Link href="/contact">Contact us</Link>
-          </nav>
-        </details>
+        <MobileMenu links={[...NAV, { href: "/contact", label: "Contact us" }]} />
       </div>
     </header>
   );
