@@ -60,6 +60,8 @@ address{font-style:normal}
 .site-footer b{color:var(--ink)}
 .site-footer .wrap>div>a{color:var(--ink);text-decoration:none;display:block;margin:4px 0}
 .site-footer a.link{color:var(--coral-deep)}
+/* .hero/.page-hero padding shorthand zeroes .wrap side padding; restore it wherever the 1120px container meets the screen edge */
+@media (max-width:1159px){.wrap.hero,.wrap.page-hero{padding-left:20px;padding-right:20px}}
 @media (max-width:900px){
  .nav-desktop,.nav-cta{display:none}.nav-mobile{display:block}
  .hero{padding:48px 0 36px}.hero h1{font-size:36px}.hero p.sub{font-size:18px}
