@@ -56,7 +56,7 @@ export default function PrivacyPage() {
 
         <h2>Changes</h2>
         <p>If we change this policy, we will update this page and the date below.</p>
-        <p>Last updated: October 13, 2026</p>
+        <p>Last updated: November 7, 2026</p>
       </div></section>
     </>
   );
