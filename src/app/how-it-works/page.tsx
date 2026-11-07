@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const steps = [
-  { n: "01", t: "Patient entry", b: "Patients enter blood pressure readings and weight, or upload past blood pressure and weight readings from a CSV file. An entry assistant helps collect and confirm entries; it does not give clinical advice." },
+  { n: "01", t: "Patient entry", b: "Patients enter blood pressure readings and weight. An entry assistant helps collect and confirm entries; it does not give clinical advice." },
   { n: "02", t: "Clinician review", b: "The care team sees a roster and each patient's measured eGFR readings and vitals over time, with notes, history and CSV export. The platform does not issue orders." },
   { n: "03", t: "The clinician decides", b: "Conversation and care decisions stay with the licensed care team. Nothing is projected forward." },
 ];

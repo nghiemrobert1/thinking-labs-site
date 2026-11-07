@@ -6,7 +6,7 @@ import { RegStatus } from "@/components/Notice";
 import { CKD_REGULATORY_STATUS, SITE_URL } from "@/lib/company";
 
 const faq = [
-  { q: "What is CKD Twin?", a: "CKD Twin is clinician-supervised monitoring software from Thinking Labs. Patients enter blood pressure readings and weight; the care team reviews past readings over time on a companion dashboard and decides what happens next." },
+  { q: "What is CKD Twin?", a: "CKD Twin is in development. It is designed to help care teams review blood pressure readings over time for adults with chronic kidney disease and follow up with patients who need it. It does not make treatment recommendations. Patients enter blood pressure readings and weight. The treating clinician makes all care decisions." },
   { q: "Is CKD Twin FDA cleared?", a: "No. " + CKD_REGULATORY_STATUS },
   { q: "What does the CKD Twin trend show?", a: "Measured values only. eGFR is plotted as recorded, with a simple slope across past readings, and nothing is projected forward." },
   { q: "Who is Thinking Labs?", a: "Thinking Labs, Inc. is a healthcare software company in Irvine, California. It is developing CKD Twin and Intake Twin." },
@@ -27,7 +27,7 @@ export default function HomePage() {
         <div className="label">What we&rsquo;re building</div>
         <h2>Two views of the same record.</h2>
         <div className="cards">
-          <div className="card"><span className="status">PATIENT VIEW</span><h3>Simple entry, phone-friendly</h3><p>Patients enter blood pressure readings and weight, or upload past blood pressure and weight readings from a CSV file. An entry assistant helps collect and confirm entries; it does not give clinical advice.</p></div>
+          <div className="card"><span className="status">PATIENT VIEW</span><h3>Simple entry, phone-friendly</h3><p>Patients enter blood pressure readings and weight. An entry assistant helps collect and confirm entries; it does not give clinical advice.</p></div>
           <div className="card"><span className="status">CLINICIAN VIEW</span><h3>Roster and patient detail</h3><p>A patient roster shows who has logged recently. Each patient page shows vitals and measured eGFR readings from the past 12 months, with notes, history and CSV export. Structured information for the care team; the platform does not issue orders.</p></div>
         </div>
         <div className="steps steps-2">
