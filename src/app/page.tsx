@@ -6,9 +6,9 @@ import { RegStatus } from "@/components/Notice";
 import { CKD_REGULATORY_STATUS, SITE_URL } from "@/lib/company";
 
 const faq = [
-  { q: "What is CKD Twin?", a: "CKD Twin is clinician-supervised monitoring software from Thinking Labs. Patients enter readings and lab values; the care team reviews past readings over time on a companion dashboard and decides what happens next." },
+  { q: "What is CKD Twin?", a: "CKD Twin is clinician-supervised monitoring software from Thinking Labs. Patients enter blood pressure readings and weight; the care team reviews past readings over time on a companion dashboard and decides what happens next." },
   { q: "Is CKD Twin FDA cleared?", a: "No. " + CKD_REGULATORY_STATUS },
-  { q: "What does the CKD Twin trend show?", a: "Measured values only. eGFR is plotted as recorded, with a simple slope across past readings, and nothing is projected forward. KDIGO stage categories are shown to the clinician to confirm and are not a diagnosis." },
+  { q: "What does the CKD Twin trend show?", a: "Measured values only. eGFR is plotted as recorded, with a simple slope across past readings, and nothing is projected forward." },
   { q: "Who is Thinking Labs?", a: "Thinking Labs, Inc. is a healthcare software company in Irvine, California. It develops CKD Twin and Intake Twin." },
 ];
 
@@ -18,22 +18,21 @@ export default function HomePage() {
       <div className="wrap hero">
         <div className="label">CKD Twin · by Thinking Labs</div>
         <h1>Shared CKD readings over time, for patients and their care team, with the clinician in charge.</h1>
-        <p className="sub">CKD Twin is a clinician-supervised monitoring platform. Patients enter readings and lab values; the care team reviews past readings over time on a companion dashboard and decides what happens next.</p>
+        <p className="sub">CKD Twin is in development. It is designed to help care teams review blood pressure readings over time for adults with chronic kidney disease and follow up with patients who need it. It does not make treatment recommendations. The treating clinician makes all care decisions.</p>
         <div className="cta"><Link className="btn" href="/contact">Contact Thinking Labs</Link><Link className="btn2" href="/how-it-works">How it works</Link></div>
         <RegStatus />
       </div>
 
       <section className="sec"><div className="wrap">
-        <div className="label">What CKD Twin does today</div>
+        <div className="label">What we&rsquo;re building</div>
         <h2>Two views of the same record.</h2>
         <div className="cards">
-          <div className="card"><span className="status">PATIENT VIEW</span><h3>Simple entry, phone-friendly</h3><p>Patients enter readings such as weight and lab results, or upload past readings from a CSV file. An entry assistant helps collect and confirm entries; it does not give clinical advice.</p></div>
+          <div className="card"><span className="status">PATIENT VIEW</span><h3>Simple entry, phone-friendly</h3><p>Patients enter blood pressure readings and weight, or upload past blood pressure and weight readings from a CSV file. An entry assistant helps collect and confirm entries; it does not give clinical advice.</p></div>
           <div className="card"><span className="status">CLINICIAN VIEW</span><h3>Roster and patient detail</h3><p>A patient roster shows who has logged recently. Each patient page shows vitals and measured eGFR readings from the past 12 months, with notes, history and CSV export. Structured information for the care team; the platform does not issue orders.</p></div>
         </div>
         <div className="steps">
           <div className="step"><div className="n">TRENDS</div><h3>Measured values only</h3><p>eGFR is plotted as recorded, with a simple slope across past readings. Nothing is projected forward.</p></div>
-          <div className="step"><div className="n">STAGING</div><h3>CKD stage category</h3><p>KDIGO categories (G1–G5) calculated from the latest labs are shown to the clinician to confirm. They are not a diagnosis.</p></div>
-          <div className="step"><div className="n">COMING SOON</div><h3>Connected home blood pressure cuff</h3><p>In development and not active. When available, readings from a validated cellular home blood pressure cuff will arrive in the patient&rsquo;s record automatically, so the care team can review measured values without manual entry.</p></div>
+          <div className="step"><div className="n">KIDNEY LABS</div><p>eGFR results over time, shown to the clinician to review.</p></div>
         </div>
       </div></section>
 

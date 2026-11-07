@@ -17,10 +17,10 @@ export default function PrivacyPage() {
       </div>
       <section className="sec"><div className="wrap prose">
         <h2>Who we are</h2>
-        <p>This website, thinkinglabsinc.com, is run by {COMPANY_LEGAL_NAME}, {COMPANY_ADDRESS}. This policy covers this website only. Our software products used by clinics are covered by separate agreements with those clinics.</p>
+        <p>This website, thinkinglabsinc.com, is run by {COMPANY_LEGAL_NAME}, {COMPANY_ADDRESS}. This policy covers this website only. Any use of our software products by clinics is covered by separate agreements with those clinics, not by this policy.</p>
 
         <h2>What we collect</h2>
-        <p>This website has no forms for health information and no place to enter health data. The only personal information we receive is what you choose to send us by email, such as your name, email address, clinic and message, when you write to {COMPANY_CONTACT_EMAIL}.</p>
+        <p>This website has no online forms and no place to enter health information. The only personal information we receive is what you choose to send us by email, such as your name, email address, clinic and message, when you write to {COMPANY_CONTACT_EMAIL}.</p>
         <p>Like any website, our hosting provider automatically processes basic technical information needed to deliver pages and keep the site secure, such as your IP address, browser type and the pages requested.</p>
 
         <h2>How we use it</h2>
@@ -31,13 +31,13 @@ export default function PrivacyPage() {
 
         {/* If analytics are ever added, update this page first. */}
         <h2>No ad or tracking pixels</h2>
-        <p>This website does not use advertising pixels, analytics or tracking tools (such as Meta Pixel, Google Analytics or Google Ads tags), and we do not use cookies to track you across other websites.</p>
+        <p>This website does not use advertising pixels or visitor analytics tools (such as Meta Pixel, Google Analytics or Google Ads tags), and we do not use cookies to track you across other websites. Our hosting provider offers an optional review toolbar that can load when it is enabled in a browser, and it may use cookies for that feature. Because this website does not track you across other websites, it does not respond differently to browser Do Not Track signals.</p>
 
-        <h2>Patients of clinics using our software</h2>
-        <p>If you are a patient of a clinic that uses CKD Twin or Intake Twin, your health information is handled under that clinic&rsquo;s privacy practices and our agreements with the clinic, including HIPAA business associate agreements. Please contact your clinic with requests about your health records.</p>
+        <h2>Patients of clinics</h2>
+        <p>CKD Twin and Intake Twin are in development. If a clinic uses our software with patient health information, that use is governed by the clinic’s privacy practices and by our written agreement with the clinic, including a HIPAA business associate agreement where HIPAA requires one. Please contact your clinic with requests about your health records.</p>
 
         <h2>Vendors we use</h2>
-        <p>We use a small number of service providers to run our business: a website hosting provider and an email provider. They process information only to provide those services to us, and not for their own advertising.</p>
+        <p>We use a small number of service providers to run our business. Our website is hosted by Vercel, which processes technical information such as your IP address, browser type and the pages you request in order to deliver the site and keep it secure. We also use Google Workspace to receive and answer messages sent to info@thinkinglabsinc.com. These providers process this information to provide their services to us.</p>
 
         <h2>Security</h2>
         <p>We use reasonable administrative, technical and physical safeguards to protect the information we receive.</p>

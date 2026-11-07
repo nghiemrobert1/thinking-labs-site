@@ -14,7 +14,7 @@ export default function AboutPage() {
       <div className="wrap page-hero">
         <div className="label">About</div>
         <h1>About Thinking Labs</h1>
-        <p className="lead">Thinking Labs, Inc. develops healthcare software: CKD Twin for clinician-supervised CKD monitoring, and Intake Twin for fax and referral intake. We keep claims modest and clinicians in charge.</p>
+        <p className="lead">Thinking Labs, Inc. is developing healthcare software, with CKD Twin as our primary focus. CKD Twin is in development to help care teams follow blood pressure readings and kidney lab results for adults with chronic kidney disease, with clinicians making all care decisions. We are also developing Intake Twin for fax and referral intake.</p>
       </div>
       <section className="sec"><div className="wrap two">
         <div className="prose">
@@ -24,7 +24,6 @@ export default function AboutPage() {
           <address><p>{COMPANY_ADDRESS}<br /><a href={`mailto:${COMPANY_CONTACT_EMAIL}`}>{COMPANY_CONTACT_EMAIL}</a></p></address>
         </div>
         <ul className="ticks">
-          <li><b>Clinical advisors</b><span>Thinking Labs works with clinical advisors on clarity and safety framing. Advisor relationships do not mean Thinking Labs employs clinicians or practices medicine. Clinical care remains with each patient&rsquo;s own licensed providers.</span></li>
           <li><b>How we describe our work</b><span>Plainly: CKD Twin supports conversations and care coordination, and the clinician decides. We state regulatory status as it is.</span></li>
         </ul>
       </div></section>

@@ -29,12 +29,12 @@ export default function SafetyPage() {
       <section className="sec"><div className="wrap">
         <div className="steps" style={{ marginTop: 0 }}>
           <div className="step"><div className="n">INTENDED USE</div><h2 style={{ fontSize: 20 }}>Intended use</h2><p>{CKD_REGULATORY_STATUS} CKD Twin does not diagnose, stage, or treat CKD on its own. Licensed clinicians retain full responsibility for care decisions.</p></div>
-          <div className="step"><div className="n">REGULATORY STATUS</div><h2 style={{ fontSize: 20 }}>Regulatory status</h2><p>CKD Twin is not FDA cleared or approved. We are working with FDA on an appropriate regulatory pathway for clinician-supervised CKD monitoring software. Features beyond the current intended use, including predictive features, will not be enabled without the required validation and regulatory steps.</p></div>
+          <div className="step"><div className="n">REGULATORY STATUS</div><h2 style={{ fontSize: 20 }}>Regulatory status</h2><p>CKD Twin is not FDA cleared or approved. We intend to follow the appropriate FDA regulatory pathway for clinician-supervised CKD monitoring software. Features beyond the current intended use, including predictive features, will not be enabled without the required validation and regulatory steps.</p></div>
           <div className="step"><div className="n">HIPAA &amp; BAAS</div><h2 style={{ fontSize: 20 }}>HIPAA &amp; BAAs</h2><p>When clinics or health systems enroll for workflows that involve protected health information, Thinking Labs will put Business Associate Agreements (BAAs) and appropriate safeguards in place before those deployments. Public demos and marketing pages are not clinic enrollment.</p></div>
         </div>
       </div></section>
       <section className="sec"><div className="wrap two">
-        <div><div className="label">At a glance</div><h2>Safety checklist</h2><p className="lead">Intake Twin is administrative software, not a medical device. A person confirms every step before anything is filed.</p></div>
+        <div><div className="label">At a glance</div><h2>Safety checklist</h2><p className="lead">Intake Twin is administrative software. It sorts documents and pulls out patient and insurance details for staff to confirm. It does not analyze clinical findings, give clinical advice or make clinical decisions. Demonstrations use synthetic sample documents only. Please do not send us patient documents or patient information. A person confirms every step before anything is filed.</p></div>
         <ul className="ticks">{checklist.map((c) => <li key={c}><b>{c}</b></li>)}</ul>
       </div></section>
       <section className="sec"><div className="wrap"><Link href="/contact">Questions? Contact us →</Link></div></section>

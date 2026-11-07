@@ -17,7 +17,7 @@ export default function ContactPage() {
       </div>
       <section className="sec"><div className="wrap cards" style={{ marginTop: 0 }}>
         <div className="card"><span className="status">EMAIL</span><h2 style={{ fontSize: 24 }}>Email us</h2>
-          <p>To book an Intake Twin demo, include your clinic, your role, your EMR and roughly how many faxes you receive per day.</p>
+          <p>To request an Intake Twin demo, include your clinic, your role and your EMR. Please don’t include any patient information or other health information in your email.</p>
           <a className="btn" href={`mailto:${COMPANY_CONTACT_EMAIL}?subject=Thinking%20Labs%20inquiry`}>{COMPANY_CONTACT_EMAIL}</a></div>
         <div className="card"><span className="status">ADDRESS</span><h2 style={{ fontSize: 24 }}>Irvine, California</h2>
           <address><p>Thinking Labs, Inc.<br />{COMPANY_ADDRESS}</p></address></div>
