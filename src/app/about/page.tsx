@@ -4,7 +4,7 @@ import { COMPANY_ADDRESS, COMPANY_CONTACT_EMAIL, COMPANY_LEGAL_NAME } from "@/li
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Thinking Labs, Inc. is a healthcare software company in Irvine, California that develops CKD Twin and Intake Twin.",
+  description: "Thinking Labs, Inc. is a healthcare software company in Irvine, California that is developing CKD Twin and Intake Twin.",
   alternates: { canonical: "/about" },
 };
 

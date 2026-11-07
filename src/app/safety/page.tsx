@@ -34,7 +34,7 @@ export default function SafetyPage() {
         </div>
       </div></section>
       <section className="sec"><div className="wrap two">
-        <div><div className="label">At a glance</div><h2>Safety checklist</h2><p className="lead">Intake Twin is administrative software. It sorts documents and pulls out patient and insurance details for staff to confirm. It does not analyze clinical findings, give clinical advice or make clinical decisions. Demonstrations use synthetic sample documents only. Please do not send us patient documents or patient information. A person confirms every step before anything is filed.</p></div>
+        <div><div className="label">At a glance</div><h2>Safety checklist</h2><p className="lead">Intake Twin is administrative software. It sorts documents and pulls out patient and insurance details for staff to confirm. It does not analyze clinical findings, give clinical advice or make clinical decisions.</p><p className="lead">Demonstrations use synthetic sample documents only. Please do not send us patient documents or patient information. In the walkthrough, nothing is filed until staff confirm it.</p></div>
         <ul className="ticks">{checklist.map((c) => <li key={c}><b>{c}</b></li>)}</ul>
       </div></section>
       <section className="sec"><div className="wrap"><Link href="/contact">Questions? Contact us →</Link></div></section>

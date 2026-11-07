@@ -9,7 +9,7 @@ const faq = [
   { q: "What is CKD Twin?", a: "CKD Twin is clinician-supervised monitoring software from Thinking Labs. Patients enter blood pressure readings and weight; the care team reviews past readings over time on a companion dashboard and decides what happens next." },
   { q: "Is CKD Twin FDA cleared?", a: "No. " + CKD_REGULATORY_STATUS },
   { q: "What does the CKD Twin trend show?", a: "Measured values only. eGFR is plotted as recorded, with a simple slope across past readings, and nothing is projected forward." },
-  { q: "Who is Thinking Labs?", a: "Thinking Labs, Inc. is a healthcare software company in Irvine, California. It develops CKD Twin and Intake Twin." },
+  { q: "Who is Thinking Labs?", a: "Thinking Labs, Inc. is a healthcare software company in Irvine, California. It is developing CKD Twin and Intake Twin." },
 ];
 
 export default function HomePage() {
@@ -30,9 +30,9 @@ export default function HomePage() {
           <div className="card"><span className="status">PATIENT VIEW</span><h3>Simple entry, phone-friendly</h3><p>Patients enter blood pressure readings and weight, or upload past blood pressure and weight readings from a CSV file. An entry assistant helps collect and confirm entries; it does not give clinical advice.</p></div>
           <div className="card"><span className="status">CLINICIAN VIEW</span><h3>Roster and patient detail</h3><p>A patient roster shows who has logged recently. Each patient page shows vitals and measured eGFR readings from the past 12 months, with notes, history and CSV export. Structured information for the care team; the platform does not issue orders.</p></div>
         </div>
-        <div className="steps">
+        <div className="steps steps-2">
           <div className="step"><div className="n">TRENDS</div><h3>Measured values only</h3><p>eGFR is plotted as recorded, with a simple slope across past readings. Nothing is projected forward.</p></div>
-          <div className="step"><div className="n">KIDNEY LABS</div><p>eGFR results over time, shown to the clinician to review.</p></div>
+          <div className="step"><div className="n">KIDNEY LABS</div><h3>Kidney lab results</h3><p>eGFR results over time, shown to the clinician to review.</p></div>
         </div>
       </div></section>
 
@@ -40,7 +40,7 @@ export default function HomePage() {
         <div>
           <div className="label">Safety &amp; regulatory</div>
           <h2>Intended to support, not replace, clinical judgment.</h2>
-          <p className="lead">CKD Twin is designed for clinician-supervised monitoring and care coordination. Every screen carries the same reminder: the doctor decides.</p>
+          <p className="lead">CKD Twin is designed for clinician-supervised monitoring and care coordination. The treating clinician makes all care decisions.</p>
           <Link href="/safety">Read safety &amp; regulatory details →</Link>
         </div>
         <ul className="ticks">
@@ -61,7 +61,7 @@ export default function HomePage() {
       <section className="sec"><div className="wrap">
         <div className="label">Also from Thinking Labs</div>
         <div className="card also">
-          <div><h3 style={{ marginTop: 0 }}>Intake Twin</h3><p style={{ margin: 0 }}>Faxed referrals in, chart-ready intake out, confirmed by your staff. More patient care. Less paperwork.</p></div>
+          <div><h3 style={{ marginTop: 0 }}>Intake Twin</h3><p style={{ margin: 0 }}>Administrative software in development for fax and referral intake. Our walkthrough uses synthetic sample documents and simulated processing.</p></div>
           <Link href="/intake-twin">Visit Intake Twin →</Link>
         </div>
       </div></section>
@@ -75,7 +75,7 @@ export default function HomePage() {
         applicationCategory: "HealthApplication",
         operatingSystem: "Web",
         url: SITE_URL,
-        description: "Clinician-supervised CKD monitoring dashboards for patients and care teams. " + CKD_REGULATORY_STATUS,
+        description: "In development: clinician-supervised CKD monitoring dashboards for patients and care teams. " + CKD_REGULATORY_STATUS,
         publisher: { "@type": "Organization", name: "Thinking Labs, Inc.", url: SITE_URL },
       }} />
     </>

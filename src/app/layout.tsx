@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Thinking Labs",
   },
   description:
-    "CKD Twin: shared views of kidney labs, blood pressure and vitals over time, for clinician-supervised monitoring. Not FDA cleared; the clinician decides. (in development)",
+    "CKD Twin (in development): shared views of kidney labs, blood pressure and vitals over time, for clinician-supervised monitoring. Not FDA cleared; the clinician decides.",
   applicationName: "Thinking Labs",
   authors: [{ name: COMPANY_LEGAL_NAME }],
   publisher: COMPANY_LEGAL_NAME,
