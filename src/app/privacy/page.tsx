@@ -31,7 +31,7 @@ export default function PrivacyPage() {
 
         {/* If analytics are ever added, update this page first. */}
         <h2>No ad or tracking pixels</h2>
-        <p>This website does not use advertising pixels or visitor analytics tools (such as Meta Pixel, Google Analytics or Google Ads tags), and we do not use cookies to track you across other websites. Our hosting provider offers an optional review toolbar that can load when it is enabled in a browser, and it may use cookies for that feature. Because this website does not track you across other websites, it does not respond differently to browser Do Not Track signals.</p>
+        <p>This website does not use advertising pixels or visitor analytics tools (such as Meta Pixel, Google Analytics or Google Ads tags), and we do not use cookies to track you across other websites. Because this website does not track you across other websites, it does not respond differently to browser Do Not Track signals.</p>
 
         <h2>Patients of clinics</h2>
         <p>CKD Twin and Intake Twin are in development. If a clinic uses our software with patient health information, that use is governed by the clinic’s privacy practices and by our written agreement with the clinic, including a HIPAA business associate agreement where HIPAA requires one. Please contact your clinic with requests about your health records.</p>
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
 
         <h2>Changes</h2>
         <p>If we change this policy, we will update this page and the date below.</p>
-        <p>Last updated: November 7, 2026</p>
+        <p>Last updated: November 21, 2026</p>
       </div></section>
     </>
   );
